@@ -1,0 +1,30 @@
+<!--pages/address/address.wxml-->
+<!-- <view wx:if="{{data.length<1}}" class='noDataView'>
+    <image class='noDataImg' src='../../images/prompt_back.png'></image>
+    <text class='text-size-36 margin-top-4'>暂无数据</text>
+  </view> -->
+<demo-block>
+  <view class="demo-block__title">
+    <text class="title_prefix" decode="{{true}}"></text> 配送地址</view>
+  <van-cell-group>
+    <van-field value="{{userInfo.userName}}" label="收货人" placeholder="名字" bind:click-icon="onClickIcon" bind:blur="changeUsername" bind:focus="hideShow" error-message="{{error.userName}}" required />
+    <van-field value="{{ userInfo.telNumber }}" label="手机号" placeholder="11位手机号" error-message="{{error.telNumber}}" border="{{ false }}" bind:blur="changeTelNumber" bind:focus="hideShow" required />
+    <van-field value="{{userInfo.provinceName&&userInfo.cityName&&userInfo.countyName&&userInfo.provinceName +' '+ userInfo.cityName  +' '+  userInfo.countyName}}" icon="location-o" label="选择地区" placeholder="地区信息" border="{{ false }}" bindtap="toggleShow"
+      error-message="{{error.address}}" required readonly />
+    <van-field required bind:click-icon="getlocation" icon="location" bind:focus="hideShow" value="{{ userInfo.detailInfo }}" label="详细地址" type="textarea" placeholder="街道门牌信息" autosize border="{{ false }}" bind:blur="changeDetailInfo" error-message="{{error.detailInfo}}"
+      size="large" />
+    <van-field value="{{ userInfo.postalCode }}" label="邮编" placeholder="如200001" border="{{ false }}" bind:blur="changePostalCode" bind:focus="hideShow" />
+    <van-field value="{{ userInfo.tag }}" label="标签" placeholder="如家中 公司" border="{{ false }}" bind:change="changeTag" bind:focus="hideShow" />
+  </van-cell-group>
+</demo-block>
+<view style='margin: 10px 10px 0px '>
+  <van-tag mark wx:if="{{userInfo.tag&&userInfo.tag!=''}}" style='margin-right:10px' plain size="large" type="primary"> {{userInfo.tag}} </van-tag>
+</view>
+<view class="actionSheet {{show?'show':''}}">
+  <van-area loading="{{ loading }}" bind:change="changeAddress" bind:confirm="comfirmAddress" bind:cancel="resetAddress" area-list="{{ areaList }}" value="{{userInfo.countycode}}" />
+</view>
+<view class="van-address-edit__buttons" style='width:calc( 100% - 30px ) ;'>
+  <button style='margin-top:60rpx' class="loginBtn" bindtap="submit" type="primary" size="primary" size="large">保存</button>
+  <!-- <van-button  bindtap="back" size="large" >取消</van-button> -->
+</view>
+<van-dialog id="van-dialog" />

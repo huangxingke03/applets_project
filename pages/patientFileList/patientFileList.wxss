@@ -1,0 +1,165 @@
+/* pages/fileManagement/fileManagement.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.window_view {
+  height: 100%;
+  width: 100%;
+}
+
+.file_data_view {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+.line {
+  background-color: #f0f2f5;
+  height: 30rpx;
+  width: 100%;
+}
+
+.my_file_info_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20rpx;
+  padding-left: 27rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+  height: calc(100vw/100*35);
+}
+
+.family_file_info_view {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient_icon {
+  width: calc(100vw/100*30);
+  height: calc(100vw/100*32);
+}
+
+.patient_info {
+  flex-direction: column;
+  display: flex;
+  width: calc(100vw/100*70);
+  height: 100%;
+  margin: 0 20rpx;
+}
+
+.patient_info_name {
+  color: black;
+  font-size: 40rpx;
+  text-align: left;
+}
+
+.patient_info_phone {
+  font-size: 30rpx;
+  text-align: left;
+  max-lines: 1;
+  margin-top: 2%;
+  color: #676767;
+}
+
+.patient_info_type {
+  font-size: 36rpx;
+  margin-top: 2%;
+  color: #676767;
+  text-align: left;
+}
+
+.detail_bt_view {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 2%;
+  width: 100%;
+}
+
+.detail_bt {
+  background: #f15b1a;
+  color: #fff;
+  width: 30%;
+  border-radius: 10rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  margin-right: 0;
+  font-size: 36rpx;
+}
+
+.botom_view {
+  width: 100%;
+  display: flex;
+  margin-top: 50rpx;
+  justify-content: center;
+}
+
+.add_file_bt {
+  width: 70%;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: calc(90vw / 3);
+  font-size: 44rpx;
+  color: white;
+  display: inline-block;
+  background: linear-gradient(to right, #f8c370, #f09923);
+}
+
+.bottom_bt_view {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  bottom: calc(100vw/100*5);
+}
+
+.add_bt_view {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.prompt_no_data {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.prompt_icon {
+  width: 200rpx;
+  margin-top: 80rpx;
+  height: 200rpx;
+}
+
+.prompt_content_one {
+  width: 100%;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  color: #060d15;
+  text-align: center;
+}
+
+.prompt_content_two {
+  width: 100%;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #060d15;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.thin_line {
+  background-color: #d2d2d2;
+  height: 3rpx;
+  width: 100%;
+}

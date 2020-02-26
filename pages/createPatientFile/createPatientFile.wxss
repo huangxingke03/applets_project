@@ -1,0 +1,43 @@
+/* pages/newPatientFile/newPatientFile.wxss */
+
+page {
+     height: 100%;
+     width: 100%;
+}
+
+.window_view {
+     height: 100%;
+     width: 100%;
+     background-color: #f8f8f8;
+}
+
+.base_view {
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     width: 100%;
+}
+
+.thin_line {
+     background-color: #d2d2d2;
+     height: 3rpx;
+     width: 100%;
+}
+
+.create_bt_view {
+     display: flex;
+     justify-content: center;
+     width: 100%;
+     margin-top: 30rpx;
+     margin-bottom: 30rpx;
+}
+
+.create_file_bt {
+     width: 80%;
+     text-align: center;
+     line-height: 100rpx;
+     font-size: 44rpx;
+     color: white;
+     display: inline-block;
+     background: linear-gradient(to right, #f8c370, #f09923);
+}

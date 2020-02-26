@@ -1,0 +1,14 @@
+/* subPackage2//pages/youZancart/youZancart.wxss */
+.cart-view {
+  margin-bottom: 20vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart {
+  margin-bottom: 20vh;
+}
+
+.bottom-view {
+  height: 500rpx;
+}

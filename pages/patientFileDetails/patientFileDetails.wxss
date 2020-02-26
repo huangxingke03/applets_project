@@ -1,0 +1,48 @@
+/* pages/patientFileDetails/patientFileDetails.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+}
+
+.window_view {
+  height: 100%;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+.base_view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.thin_line {
+  background-color: #d2d2d2;
+  height: 3rpx;
+  width: 100%;
+}
+.edit_bt_view {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.edit_file_btn {
+  width: 80%;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 44rpx;
+  color: white;
+  display: inline-block;
+  background: linear-gradient(to right, #f8c370, #f09923);
+}
+
+.line {
+  background-color: #f0f2f5;
+  height: 40rpx;
+  width: 100%;
+}

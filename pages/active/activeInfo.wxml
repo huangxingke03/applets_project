@@ -1,0 +1,75 @@
+<!--pages/active/activeInfo.wxml-->
+<view wx:if="{{activeEnableTag}}">
+  <view style="padding-bottom:{{isIphoneX?'91px':'55px'}}">
+    <view class="card-container" style='background-image:url({{active.coverPhoto||""}}); background-size:100% ;background-repeat:no-repeat'>
+    </view>
+    <view class="text-container">
+      <view class="title">
+        {{active.title}}
+      </view>
+      <rich-text class="details" nodes="{{active.details}}"></rich-text>
+    </view>
+    <view>
+      <view class="pro_title">参与专家</view>
+    </view>
+    <view class="ProList">
+      <block wx:for="{{ProList}}" wx:key="{{i}}">
+        <navigator url='../appointmentDoctor/appointmentDoctor?stfid={{item.id}}&schedulType="1-2"' class="pro">
+          <button wx:if="{{item.sex=='F'}}" class="userinfo-avatar" style="background-image: url({{item.avatar?item.avatar:'../../images/doctorDefImgF.jpg'}})"></button>
+          <button wx:else class="userinfo-avatar" style="background-image: url({{item.avatar?item.avatar:'../../images/doctorDefImgM.jpg'}})"></button>
+          <text>{{item.staffName}}</text>
+          <text style='color:rgba(0,0,0,0.5)'>{{item.physicianLevel||"专家"}}</text>
+        </navigator>
+      </block>
+    </view>
+    <view>
+      <view class="pro_title">活动时间</view>
+      <view class='store-info-cell border-botom-gray'>
+        <view class=''>
+          <view class='storeStateView' bindtap='contactStore'>
+            <text class='store-status store-text-36 overflow_hide max_line_2'>{{active.startTime}} — {{active.endTime}} </text>
+          </view>
+        </view>
+      </view>
+      <view class="pro_title">活动地址</view>
+      <view class='store-info-cell border-botom-gray' bindtap='navigateToStoreMap'>
+        <view class='position-relative'>
+          <view class='storeStateView '>
+            <image class='store-icon' src='{{item.avatar||"/images/location.png"}}' mode='widthFix'></image>
+            <text class='store-status store-text-36'>{{active.address}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class="pro_title">联系方式</view>
+      <view class='store-info-cell border-botom-gray'>
+        <view class=''>
+          <view class='storeStateView' bindtap='contactStore'>
+            <image class='store-icon' src='/images/phone.png' mode='widthFix'></image>
+            <text class='store-status store-text-36 overflow_hide max_line_2'>{{active.contacts}}  </text>
+            <text class='store-status store-text-36 overflow_hide max_line_2'>{{active.contactsTelephone}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="count" wx:if="{{isJoin}}">
+      <text style=' color:#EF9322'>我已报名参加</text>
+    </view>
+    <view class="count">
+      <text style='font-size:20px'>{{active.count}} </text>组家庭已报名</view>
+    <block wx:if="{{!isExpire}}">
+      <button wx:if="{{isJoin}}" hover-class="active" class="save_file_bt" bindtap="Join">取消报名</button>
+      <button wx:elif="{{active.state==2}}" hover-class="active" class="save_file_bt" bindtap="Join">点击报名</button>
+      <button wx:elif="{{active.state==1}}" class="save_file_bt disabled">尚未开始报名</button>
+      <button wx:elif="{{active.state==3}}" class="save_file_bt disabled">报名已满</button>
+    </block>
+  </view>
+  <van-dialog id="van-dialog" />
+  <van-dialog id="van-dialog" bind:close="onClose" />
+</view>
+<view class='articleMiss' wx:if="{{activeDisableTag}}">
+  <view class='topLine' />
+  <image src='../../images/article_no_icon.png' class='articleNoIcon' />
+  <text class='articleNoText'>内容不存在或者已失效</text>
+</view>

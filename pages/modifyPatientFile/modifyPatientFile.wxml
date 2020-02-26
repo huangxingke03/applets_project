@@ -1,0 +1,65 @@
+<!--pages/editPatientFile/editPatientFile.wxml-->
+<view class='window_view'>
+	<scroll-view>
+		<view class='base_view'>
+			<view class="demo-block_title">
+				<text></text> 主要信息 (必填)
+			</view>
+			<view class='main_info'>
+				<van-cell-group border="{{ false }}">
+					<van-field value="{{modifyPatientName}}" label="姓名:" placeholder="请输入姓名" bind:change="getPatientName" input-align="right" />
+					<picker range="{{arryGender}}" bindchange="bindGenderChange">
+						<van-cell title="性别:" value="{{showPatientGender}}" placeholder="请选择性别" />
+					</picker>
+					<van-field value="{{modifyPatientPhone}}" label="电话:" placeholder="请输入电话" bind:change="getPatientPhone" input-align="right" />
+					<picker mode="date" bindchange="bindDateChange">
+						<van-cell title="生日:" value="{{modifyPatientBirth}}" placeholder="请选择生日" />
+					</picker>
+					<picker wx:if="{{hideFileType}}" wx:key="this" range="{{arrayRelationshipType}}" bindchange="bindRelationshipType">
+						<van-cell title="关系类型:" value="{{showPatientRelationshipType}}" placeholder="请选择关系类型" />
+					</picker>
+				</van-cell-group>
+			</view>
+			<view class="second_demo-block_title" bindtap='setSecondaryInfoShow'>
+				<text></text> 其他信息
+			</view>
+			<view class="tipsContent" wx:if="{{tipContentTag}}">点击拉开编辑</view>
+			<view wx:if="{{secondary_info_show}}">
+				<view class='secondary_info'>
+					<van-cell-group border="{{ false }}">
+						<picker range="{{arrayMarriage}}" bindchange="bindMarriageChange">
+							<van-cell title="婚姻状况:" value="{{showPatientMarriage}}" placeholder="请选择婚姻状况" />
+						</picker>
+						<van-field value="{{modifyPatientmedicalInsuranceCardNumberValue}}" label="医保卡号:" placeholder="请输入医保卡号" bind:change="getMedicalCard" input-align="right" />
+						<van-field value="{{modifyPatientIdnumber}}" label="身份证号:" placeholder="请输入身份证号" type="number" bind:change="getPatientIdNumber" input-align="right" />
+						<picker range="{{arryFaith}}" bindchange="bindFaithChange">
+							<van-cell title="宗教信仰:" value="{{modifyPatientFaith}}" placeholder="请选择宗教信仰" />
+						</picker>
+						<picker range="{{arrayNationality}}" bindchange="bindNationalityChange">
+							<van-cell title="民族:" value="{{showPatientNationality}}" placeholder="请选择民族" />
+						</picker>
+						<picker range="{{arryYesNo}}" bindchange="bindChangeVeteranStatus">
+							<van-cell title="是否退伍军人:" value="{{modifyPatientWhetherVeteran}}" placeholder="不是" />
+						</picker>
+						<van-field value="{{modifyPatientAlias}}" label="别名:" placeholder="请输入别名" bind:change="getPatientAlias" input-align="right" />
+						<picker range="{{arryYesNo}}" bindchange="bindChangeMultipleBirths">
+							<van-cell title="是否多胞胎:" value="{{showPatientWhetherMultiple}}" placeholder="不是" />
+						</picker>
+						<van-field value="{{modifyPatientMotherName}}" label="母亲名字:" placeholder="请输入母亲名字" bind:change="getPatientMotherName" input-align="right" />
+						<van-field value="{{modifyPatientHomePhone}}" label="家中电话:" placeholder="请输入家中电话" bind:change="getPatientHomePhone" type="number" input-align="right" />
+						<picker mode="region" bindchange="bindPatientAddressChange">
+							<van-cell title="当前居住地:" value="{{modifyPatientLiveAddress}}" placeholder="请选择地址" />
+						</picker>
+						<picker mode="region" bindchange="bindPlaceBirthChange">
+							<van-cell title="出生地:" value="{{modifyPatientPlaceBirth}}" placeholder="请选择出生地" />
+						</picker>
+					</van-cell-group>
+				</view>
+			</view>
+			<view class='create_bt_view'>
+				<button class='create_file_bt' bindtap='modifyPatientFile'>保存</button>
+			</view>
+		</view>
+	</scroll-view>
+	<van-dialog id="van-dialog" />
+</view>

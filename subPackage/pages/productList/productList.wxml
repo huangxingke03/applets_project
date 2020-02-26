@@ -1,0 +1,37 @@
+<!--miniprogram/pages/productList/productList.wxml-->
+<view class='main_view'>
+  <view class="upper-layer-first">
+    <view class="top-directory">
+      <scroll-view class="primary-directory-scroll" scroll-into-view="{{rightView}}" scroll-x>
+        <view class='primary-directory-sum'>
+          <view class="{{selectPrimaryIndex==item.index?'primary-directory-select':'primary-directory-normal'}}" catchtap='selectPrimaryDirectory' data-childsort='{{item.childSort}}' wx:for="{{primaryDirectory}}" wx:key="{{i}}" data-index='{{item.index}}'
+          data-idValue='{{item.idValue}}'>
+            <text id="{{item.idValue}}" class="{{selectPrimaryIndex==item.index?'primary-title-on':'primary-title'}}">{{item.name}}</text>
+          </view>
+        </view>
+      </scroll-view>
+      <image src="../../../images/arrow_right.png" class="arrow-right" bindtap="scrollToRight" />
+    </view>
+  </view>
+  <view class="secondary-kind-goods">
+    <view class="secondary-directory-view">
+      <scroll-view class="secondary-directory-scroll" scroll-y style="height:100%">
+        <view style="width:20vw">
+          <view class="{{selectSecondaryIndex==item.index?'secondary-directory-select':'secondary-directory-normal'}}" catchtap='selectSecondaryDirectory' data-id='{{item.youZanDirectoryId}}' wx:for="{{secondaryDirectory}}" wx:key="{{i}}" data-index='{{item.index}}'>
+            <text id="{{item.name}}" class="{{selectSecondaryIndex==item.index?'secondary-title-on':'secondary-title'}}">{{item.youZanDirectoryName}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="goods-view">
+      <goods style="width:80vw" app-id="{{appId}}" shop-id="{{shopId}}" open-id="{{openId}}" goods-group-id="{{youZanGoodsGroupId}}" layout="{{1}}" redirect-type="{{3}}" bind:item-click="handleGoodsClick" bind:buy="handleGoodsClick" open-cart="{{true}}"
+        size-type="{{5}}" />
+    </view>
+  </view>
+  <view class="button-sum">
+    <view class="fight-group-css" bindtap="jumpToGroupPage" wx:if="{{false}}">拼</view>
+    <view class="shopping-cart-view" bindtap="jumpToCartPage">
+      <image src="../../../images/shop-cart.png" class="shopping-cart-icon" />
+    </view>
+  </view>>
+</view>

@@ -1,0 +1,53 @@
+/* pages/address/address.wxss */
+.fixplaceholder{
+  margin-bottom:-10px; 
+  transform: translateY(-30px)
+}
+.actionSheet{
+    position: fixed;
+    max-height: 100%;
+    overflow-y: auto;
+    background-color: #fff;
+    -webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+    -webkit-overflow-scrolling: touch;
+     width: 100%;
+    top: auto;
+    bottom: 0;
+    right: auto;
+    left: 50%;
+    transform: translate3d(-50%, 100%, 0);
+    opacity: 0;
+    z-index: 999;
+
+
+}
+.show{
+    transform: translate3d(-50%, 0, 0);
+     opacity: 100
+
+}
+.van-address-edit__buttons {
+    padding: 30px 15px;
+}
+.van-address-edit__buttons .van-button {
+    margin-bottom: 15px;
+}
+.demo-block__title {
+  background-color:white;
+  display: flex;
+  align-items: center;
+  color:black;
+  padding:10px 15px ;
+  font-size: 30rpx;
+
+}
+.title_prefix{
+  display: block;
+  font-size: 1em;
+  background-color: #F8C574;
+  height: 1.8em;
+  border-radius:4px;
+  margin-right: 0.5em;
+  width:9rpx
+}

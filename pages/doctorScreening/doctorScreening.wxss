@@ -1,0 +1,163 @@
+/* miniprogram/pages/doctorScreening/doctorScreening.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+.window_view {
+  height: 100%;
+  width: 100%;
+}
+
+.main-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.chose-item {
+  position: absolute;
+  z-index: 1;
+}
+
+.main-search-view {
+  display: flex;
+  flex-direction: row;
+  background: #f8f8f8;
+  align-content: center;
+  height: 55rpx;
+  margin-top: 34rpx;                       
+}
+
+.search-view {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30rpx;
+  background: #dadada;
+  align-items: center;
+  border-radius: 16rpx;
+  flex: 1;
+}
+
+.search-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 26rpx;
+}
+
+.search-input {
+  margin-left: 20rpx;
+  height: 30rpx;
+  text-align: left;
+  font-size: 14px;
+  flex: 1;
+}
+
+placeholder {
+  font-size: 14px;
+}
+
+.clear-bt {
+  color: black;
+  font-size: 33rpx;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  line-height: 55rpx;
+  text-align: center;
+}
+
+.filter-selection-back {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1;
+  margin-top:13%;
+
+}
+
+.filter-selection {
+  background-color: #fff;
+  /* border-bottom: 2rpx solid #f8f8f8;
+  box-shadow: 0 5px 6px 0px #dfdfdf; */
+  padding-bottom: 20rpx;
+}
+
+.doctor-list-view {
+  margin-bottom: 80rpx;
+  height: 100%;
+}
+
+.main-top-view {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.back-wall {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.noDataView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 9%;
+  margin-top: 10%;
+}
+
+.noDataImg {
+  width: 450rpx;
+  height: 270rpx;
+}
+
+.text-size-36 {
+  font-size: 36rpx;
+  display: flex;
+}
+
+.margin-top-4 {
+  margin-top: 4%;
+}
+
+.loadingView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20rpx;
+  height: calc(100vw/100*15);
+  width: 100%;
+}
+
+.loadingTitle {
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.loadingIconView {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.loadingIcon {
+  width: 40rpx;
+  height: 40rpx;
+  animation: rotate 2s linear infinite;
+}
+
+.loadingComplete {
+  text-align: center;
+  margin-top: 20rpx;
+  margin-bottom: 70rpx;
+}
+
+.scrollView {
+  background: #f6f7f8;
+  height: 100%;
+}

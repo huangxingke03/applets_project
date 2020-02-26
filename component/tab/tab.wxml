@@ -1,0 +1,28 @@
+<template name="tab">
+  <view class="custom_tab" style="{{isIphoneX?'padding-bottom:36px':''}}">
+    <!--日程-->
+    <view class="custom_tab_item " data-id="1" bindtap="goTo">
+      <image class="tab_item_img" src="{{chose_index != 1 ? '../../images/tab_home.jpg' : '../../images/tab_home_active.jpg'}}"></image>
+      <text class="tab_item_title {{chose_index == 1 ? 'select_title' : ''}}">首 页</text>
+    </view>
+    <view class="custom_tab_item" data-id="2" bindtap="goTo">
+      <image class="tab_item_img" src="{{chose_index != 2 ? '../../images/ic_appointment_normal.png' : '../../images/ic_appointment_select.png'}}"></image>
+      <text class="tab_item_title {{chose_index == 2 ? 'select_title' : ''}}">预 约</text>
+    </view>
+    <!--发布-->
+    <!-- <view class="public_tab" data-id="3" bindtap="goTo">
+      <image class="" src="../../images/tab_order.png"></image>
+      <text class="tab_item_title {{chose_index == 3 ? 'select_title' : ''}}">预 约</text>
+    </view> -->
+    <!--我的-->
+    <view class="custom_tab_item" data-id="3" bindtap="goTo">
+      <image class="tab_item_img" src="{{chose_index != 3 ? '../../images/ic_set_meal_normal.png' : '../../images/ic_set_meal_select.png'}}"></image>
+      <text class="tab_item_title {{chose_index == 3 ? 'select_title' : ''}}">套 餐</text>
+    </view>
+    <view class="custom_tab_item" data-id="4" bindtap="goTo">
+      <image class="tab_item_img" src="{{chose_index != 4 ? '../../images/tab_mine.jpg' : '../../images/tab_mine_active.jpg'}}"></image>
+      <text class="tab_item_title {{chose_index == 4 ? 'select_title' : ''}}">我 的</text>
+    </view>
+    <view wx:if="{{isIphoneX}}"></view>
+  </view>
+</template>

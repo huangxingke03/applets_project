@@ -1,0 +1,146 @@
+/* component/doctoritem/doctoritem.wxss */
+
+.doctorItem {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 26rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+
+.doctorImg {
+  width: 180rpx;
+  height: 240rpx;
+  border-radius: 16rpx;
+  box-shadow: 3px 3px 8px rgb(228, 225, 222);
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+}
+
+.doctorInfoView {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw/100*65);
+  position: relative;
+}
+
+.doctorInfoTopView {
+  display: flex;
+  flex-direction: row;
+  height: 67rpx;
+  width: 100%;
+  position: relative;
+}
+
+.doctorInfoNameView {
+  display: flex;
+  flex-direction: row;
+  height: 40rpx;
+  text-align: center;
+  margin-left: 20rpx;
+  align-items: center;
+  margin-top: 25rpx;
+  width: 72%;
+}
+
+.doctorInfoName {
+  color: black;
+  text-align: center left;
+  font-size: 40rpx;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.reservationView {
+  display: flex;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 33px;
+  border: 1px solid #6a98d1;
+}
+
+.reservation {
+  color: #6a98d1;
+  line-height: 70rpx;
+  font-size: 36rpx;
+  padding: 5px;
+}
+
+.mainview {
+  max-height: 160rpx;
+  margin-top: 8rpx;
+  margin-left: 22rpx;
+  overflow: hidden;
+}
+
+.viewJobTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.jonTitle {
+  line-height: 39rpx;
+  font-size: 25rpx;
+  color: #95631b;
+  margin-left: 10rpx;
+}
+
+.specialTitle {
+  line-height: 39rpx;
+  font-size: 25rpx;
+  color: red;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  border-radius: 10rpx;
+  border: 1px solid transparent;
+  text-align: center;
+  margin-left: 10rpx;
+  display: flex;
+}
+
+.line {
+  background-color: #d9d9d9;
+  height: 3rpx;
+  margin-left: 22rpx;
+  margin-top: 10rpx;
+  margin-right: 24rpx;
+}
+
+.doctorInfoText {
+  display: block;
+  font-size: 26rpx;
+  color: #555657;
+  max-height: 80rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  margin: 25rpx 22rpx;
+}
+
+.special_need_icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.roundShape {
+  width: 6rpx;
+  height: 6rpx;
+  background: #95631b;
+  border-radius: 50rpx;
+}

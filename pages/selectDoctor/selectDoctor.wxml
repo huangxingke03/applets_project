@@ -1,0 +1,97 @@
+<!--pages/oppointmentDoctor/oppointmentDoctor.wxml-->
+<view class='staffInfoPage'>
+	<view class="top-title">
+		<view class='title-main-back'>
+			<view class='title-second-back'>
+				<view class="tab-title {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="clickChange">我的医生</view>
+			</view>
+		</view>
+		<view class='title-main-back'>
+			<view class='title-second-back'>
+				<view class="tab-title {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="clickChange">门诊医生</view>
+			</view>
+		</view>
+	</view>
+	<view class='swiper-view'>
+		<swiper current="{{currentTab}}" style='height:100%'>
+			<swiper-item catchtouchmove='catchTouchMove'>
+				<scroll-view scroll-y="{{true}}" style="height: {{winHeight?winHeight+'px':'auto'}}" bindscrolltolower="searchScrollLower">
+					<view class='scrollView'>
+						<block wx:for="{{myStaffInfos}}" wx:key="{{i}}">
+							<view class='staffInfoItem' bindtap='gotoAppointmentDoctor' data-doctor='{{item}}'>
+								<view class='display_flex direction_row'>
+									<image class='staffInfoImg' mode='aspectFill' src='{{item.avatarUrl}}'></image>
+									<view class='doctorInfoView'>
+										<view class='doctorInfoTopView'>
+											<view class='doctorInfoNameView'>
+												<text class='doctorInfoName'>{{item[titelKey]}}</text>
+												<text wx:if="{{item.expertCategory==2}}" class='specialTitle'>[特需专家]</text>
+											</view>
+											<view class='reservationView'>
+												<text class='reservation'>预约</text>
+											</view>
+										</view>
+										<view wx:if="{{item.labArray&&item.labArray.length!=0}}">
+											<view class='mainview'>
+												<block wx:for="{{item.labArray}}" wx:key="{{i}}">
+													<view class='viewJobTitle'>
+														<view class="roundShape" />
+														<text class="jonTitle">{{item}}</text>
+													</view>
+												</block>
+											</view>
+										</view>
+									</view>
+								</view>
+								<view class='line' />
+								<text class='doctorInfoText'>{{item.staffInfo}}</text>
+							</view>
+						</block>
+						<view wx:if="{{noDataShow1}}" class='noDataView'>
+							<image class='noDataImg' src='../../images/prompt_back.png'></image>
+							<text class='text-size-36 margin-top-4'>暂无数据</text>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+			<swiper-item catchtouchmove='catchTouchMove'>
+				<scroll-view scroll-y="{{verticalSlidingTag}}" style="height: {{winHeight?winHeight+'px':'auto'}}" bindscrolltolower="searchScrollLower">
+					<view class='scrollView'>
+						<view class='main-search-view'>
+							<view class='search-view' bindtap='clickInputBox'>
+								<image class='search-icon' src='../../images/search_icon.png'></image>
+								<input wx:if="{{startChoseContion}}" class='search-input' placeholder="点击输入医生名字进行搜索" placeholder-class="placeholder" bindinput='getInputName' value='{{inputName}}'></input>
+								<input wx:if="{{endChoseContion}}" class='search-input' value='{{showInputValue}}' placeholder="点击输入医生名字进行搜索" bindinput='getSelectInfo' disabled='true'></input>
+							</view>
+							<text class='clear-bt' bindtap='filterEvent' wx:if="{{startFilterTag}}">筛选</text>
+							<text class='clear-bt' bindtap='clearEvent' wx:if="{{startClearTag}}">清除</text>
+						</view>
+						<view class='filter-selection-back' wx:if="{{startChoseContion}}">
+							<view class='filter-selection'>
+								<chose-item wx:if="{{false}}" item-title='科室选择' resource-array="{{departmentArray}}" select-department-id="{{currentDepartMentId}}" bind:choseDepartment='choseDepartment' />
+								<chose-item item-title='类别选择' resource-array="{{doctorKindArray}}" select-category-id="{{currentCategoryId}}" department-tag="{{false}}" category-tag="{{true}}" bind:choseCategory='choseCategory' />
+								<cancle-sure-bt bind:cancelEvent='cancelEvent' bind:sureEvent='sureEvent'></cancle-sure-bt>
+							</view>
+						</view>
+						<view wx:if="{{hasOutDoctor}}">
+							<doctor-item doctor-arry="{{staffInfos}}" bind:doctorItemEvent='outDoctorEvent'></doctor-item>
+							<view wx:if="{{moreLoad}}" class="loadingView" hidden="{{!searchLoading}}">
+								<view class='loadingIconView'>
+									<image src='../../images/loading_icon.png' class='loadingIcon' />
+								</view>
+								<view class='loadingTitle'>正在加载更多</view>
+							</view>
+							<view class="loadingComplete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+						</view>
+						<view wx:if="{{noOutDoctor}}" class='noDataView'>
+							<image class='noDataImg' src='../../images/prompt_back.png'></image>
+							<text class='text-size-36 margin-top-4'>暂无数据</text>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+		</swiper>
+	</view>
+	<image class='contactBt' src='/images/fixed_call.png'></image>
+</view>
+<van-dialog id="van-dialog" bind:close="onClose" />

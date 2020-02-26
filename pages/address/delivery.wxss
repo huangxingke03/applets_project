@@ -1,0 +1,113 @@
+/* pages/address/delivery.wxss */
+@import "/miniprogram_npm/vant-weapp/cell/index.wxss";
+@import "/miniprogram_npm/vant-weapp/icon/index.wxss";
+
+view {
+  box-sizing: border-box
+}
+
+page {
+  padding: 12.5px 0 0 0;
+  font-size: 30rpx;
+  line-height: 1;
+  overflow-x: hidden
+}
+
+navigator {
+  width: calc(100vw - 50rpx);
+  margin: 0 auto;
+  border-radius: 10px;
+
+}
+
+.panel {
+  margin: 12.5px 0;
+  width: calc(100vw - 50rpx);
+  border-radius: 10px;
+}
+
+.halfbg {
+  width: 86rpx;
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220rpx;
+  margin-right: 8rpx;
+}
+
+.flex {
+  display: flex;
+}
+
+.gray-50 {
+  color: rgba(0, 0, 0, 0.5)
+}
+
+.gray-80 {
+  color: rgba(0, 0, 0, 0.8)
+}
+
+.smallFont {
+  font-size: 24rpx;
+  padding-bottom: 14rpx;
+}
+
+.rightview {
+  /* padding: 0 16rpx; */
+  display: flex;
+  align-items: center;
+  width: 83%;
+  padding: 0 16rpx 0 8rpx
+}
+
+.rightview>view {
+  width: 100%;
+}
+
+.flex-bet {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.van-cell__left-icon-wrap {
+  margin-right: 38rpx;
+  font-size: 55rpx;
+}
+
+.loadingView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20rpx;
+  height: calc(100vw/100*15);
+  width: 100%;
+}
+
+.loadingTitle {
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.loadingIconView {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.loadingIcon {
+  width: 40rpx;
+  height: 40rpx;
+  animation: rotate 2s linear infinite;
+}
+
+.loadingComplete {
+  text-align: center;
+  margin-top: 20rpx;
+  margin-bottom: 70rpx;
+}
+.scrollView {
+  padding-bottom: 150rpx;
+  background: #f6f7f8;
+}

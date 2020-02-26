@@ -1,0 +1,262 @@
+/* pages/primaryCenter/primaryCenter.wxss */
+page{
+ background-color: #B58037;
+font-size: 13px;
+padding-bottom: 36px;
+}
+.service-container{
+  width: 340px;
+  margin: 0 auto;
+  position: relative;
+}
+.answer {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0px 8px 8px 8px;
+  border-color: transparent transparent white transparent;
+  position:absolute;
+  top:-8px;
+  left:50%;
+  margin-left:-8px;
+  
+}
+/* progress start */
+.progress{
+  width: 100%;
+  height: 3px;
+
+  position: relative;
+}
+.black-bar{
+  background-color:black;
+  opacity: 0.3;
+    position: absolute;
+  left:0;
+  top:0;
+  height:3px;
+  z-index: 2;
+  width: 100%;
+}
+.gold-bar{
+  position: absolute;
+  left:0;
+  top:0;
+  height:3px;
+  z-index: 2;
+  background:#F9DC77;
+}
+.gold-ball{
+  position: absolute;
+  background-color:#F9DC77;
+  border-radius: 50%;
+  height:9px;
+  width: 9px;
+  z-index:3;
+  top:-3px;
+}
+.white-border{
+  border:1px solid white;
+  top:-4px !important;
+}
+.big{
+    box-shadow:0 0 1px 3px  #F9DC77;
+  left:50% !important;
+
+}
+/* progress end */
+.panel{
+  /* color:green; */
+ border-radius: 10px 10px 0 0 ; 
+ background: #fff;
+ width:100%;
+display:flex;
+padding:15px 15px;
+box-sizing:border-box;
+line-height:24px;
+position:relative;
+background-color:#fff;
+color:#333;
+font-size:14px;
+
+ 
+}
+.panel .van-cell__title{
+ color:#BD832B;
+font-size:12px;
+min-height:24px;
+line-height:1.5;
+
+
+
+}
+.panel .van-cell__label{
+  font-size:10px;
+  /*  color:black; */
+  /* font-weight:bold; */
+}
+.panel .dot{
+  font-weight: bold;
+  color:#996011;
+  font-size: 3em;
+  position: absolute;
+  left:0;
+  top:-18px;
+  display: inline-block;
+  width: 2em;
+}
+
+.content{
+  background-color: #996011 !important;
+  padding:0 10px 10px !important;
+}
+.slot-title{
+  color:#BD832B;
+  font-size: 12px;
+  height: 24px;
+  line-height: 1.5;
+  padding-left:2em;
+}
+.van-cell__label {
+font-size:10px;
+line-height:1;
+min-height: 9px;
+color:#7d7e80;
+position: relative;
+}
+
+.font-gold{
+  color:#F9DC77;
+}
+.dot{
+  position: relative;
+  top:-3px;
+}
+.serviceContent{
+  display: flex;
+  color:#fff;
+    /* flex-wrap:nowrap; */
+
+}
+.serviceContent .title{
+
+font-size: 0.8em;
+  /* white-space: nowrap; */
+  line-height:18px;
+  padding-right: 1em;
+  width:38.2%;
+}
+.serviceContent .details{
+  width: 61.8%
+}
+/* end */
+/* card start */
+.card-container{
+  /* background-color:orange;  */
+  width:calc( 100% - 40px );
+  margin:0px auto;
+  border-radius:15px;
+  color:#fff;
+   font-size:14px;
+   padding:15.34px 0;
+
+}
+.userinfo-avatar {
+height:52.33px;
+width: 52.33px;
+margin:5px;
+border-radius:50%;
+background-size:cover;
+background-color:#EFE3D1;
+border:1px solid #EFE3D1;
+}
+.userinfo {
+  /* margin-top: 40rpx; */
+  /* height: 240rpx; */
+  width: 100%;
+
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  transition: all 300ms ease;
+   position: relative;
+
+ 
+}
+.userinfo .primary{
+  position:absolute;
+  top:0;
+  right:0px;
+  width:86.6666px;
+  height:32.6666px;
+  font-size: 11.3333px;
+  display: flex;
+  align-items: center;
+  border-radius: 16px 0 0 16px;
+  background:#9D6111;
+  justify-content:space-around;
+
+  }
+  .userinfo .primary .text-content{
+      z-index: 2;
+  }
+
+    .userinfo .primary text{
+ padding:0 0 0 0.5em ;
+   font-size: 11.4px;
+
+  }
+
+
+.userinfo .text1{
+   margin-bottom:9.4px;
+   line-height:1 ;
+   padding: 0 0.5em 9.4px 0.2em ;
+   border-bottom:1px dotted #EFE3D1;
+   font-size: 11.4px;
+   display: inline-block;
+
+}
+.pin{
+  
+  position: relative;
+  padding-left:28px;
+  line-height: 26.3333px;
+  height:26.3333px;
+  font-size: 12px;
+}
+.pin text{
+z-index: 3;
+position:relative;
+line-height:26.3333px
+
+}
+.pin .container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top:0;
+  left:0
+}
+.pin .star{
+ height: 26.33333px;
+  width: 26.333333px;
+ left: 0;
+  top: 0;
+  z-index: 3;
+  position: relative
+}
+.pin .bar{
+  margin-left:-26.3333px;
+  height:18px;
+  width:calc(26.33px + 4em + 1.5em);
+  position: relative;
+  z-index: 2
+}
+
+.date{
+  /* opacity: 0.6; */
+  padding-bottom:10px;
+  display: inline-block;
+}
+/* card end */

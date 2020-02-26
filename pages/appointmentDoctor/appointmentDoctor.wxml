@@ -1,0 +1,117 @@
+<!--pages/oppointmentDoctor/oppointmentDoctor.wxml-->
+<!-- <text>pages/oppointmentDoctor/oppointmentDoctor.wxml</text> -->
+<view class='main-view'>
+  <van-dialog id="van-dialog" />
+  <van-toast id="van-toast" />
+  <view class='mainDoctorInfo'>
+    <view class='doctorInfoOneBack' />
+    <view class='doctorInfoTwoBack' />
+    <view class='doctorInfoColumn'>
+      <view class='display_flex_doctor_info'>
+        <view class='storeImgView display-inline-block' bindtap='previewImg'>
+          <image class='storeImg' mode='aspectFill' src='{{doctor.avatarUrl}}'>
+          </image>
+        </view>
+        <view class='doctor-info display-inline-block' bindtap='navtoDoctorInfo'>
+          <!-- <view class='doctor_name_display_flex'>
+              <text class='store-text-56-bold display_flex_1 overflow_hide height-80'>{{doctor.staffName}}</text>
+              <text wx:if="{{doctor.certificateDateOfYears > 0}}" class='years-text'>{{doctor.certificateDateOfYears}}年经验</text>
+            </view> -->
+          <!-- <view class='doctor_position_display_flex'>
+              <text class='text-36'>{{doctor.physicianLevelText}}</text>
+              <text wx:if="{{doctor.physicianLevelText && doctor.physicianCategoryText}}">/</text>
+              <text class='text-36'>{{doctor.physicianCategoryText}}</text>
+            </view> -->
+          <!-- <view class='margin-line border-botom-f4941f'></view> -->
+          <view class='doctorNameItem' wx:if="{{doctor.staffName}}">
+            <image class='itemIcon' src='../../images/self_icon.png' />
+            <text class='doctorName'>{{doctor.staffName}}</text>
+            <text wx:if="{{doctor.expertCategory==2}}" class='specialTitle'>特需专家</text>
+          </view>
+          <view class='workYearItem' wx:if="{{doctor.certificateDateOfYears > 0}}">
+            <image class='itemIcon' src='../../images/self_icon.png' />
+            <text class='doctorWorkYear'>{{doctor.certificateDateOfYears}}年资质</text>
+          </view>
+          <view class='doctorPositionItem' wx:if="{{doctor.physicianLevelText}}">
+            <image class='itemIcon' src='../../images/self_icon.png' />
+            <text class='doctorPosition'>{{doctor.physicianLevelText}}</text>
+          </view>
+          <view class='thin_line'></view>
+          <view wx:if="{{labArray&&labArray.length!=0}}">
+            <view class='mainview'>
+              <block wx:for="{{labArray}}" wx:key="{{i}}">
+                <view class='viewJobTitle'>
+                  <!-- <text class="{{item=='特需专家'?'specialTitle':'jonTitle'}}">{{item}}</text> -->
+                   <text class="jonTitle">{{item}}</text>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='thin_line_full'></view>
+      <view class='doctorInfoView' bindtap='navtoDoctorInfo'>
+        <text class='doctorInfoText'>{{doctor.staffInfo}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='storeImgView'>
+        <image class='storeImg' mode='aspectFill' src='{{imgUrl}}'>
+        </image>
+      </view>
+      <view class='store-info-cell border-botom-gray'>
+        <view class='display_flex'>
+          <text class='store-text-18-bold display_flex_1 overflow_hide max_line_1'>{{doctor.staffName}}</text>
+          <van-rate class='display_flex_end margin_left_10' value="{{score}}" size="{{18}}" disabled disabled-color='#ffd21e' /> 
+          <text style='font-size:18px'>⭐ ⭐ ⭐ ⭐ ⭐</text>
+        </view>
+        <view>
+          <view >
+            <text class='doctorInfoText'>{{doctor.staffInfo}}</text>
+          </view>
+        </view>
+      </view> -->
+  <view wx:if="{{weekCanlander.length > 0}}" class='selectDateView store-info-cell '>
+    <!-- <view wx:if="{{!noDataShow}}" class='selectDateView store-info-cell '> -->
+    <view class='canlanderView border-top-botom-gray'>
+      <scroll-view class='clanderScroll' scroll-x>
+        <view class='list' style='width:{{scrollWidth}}rpx'>
+          <block wx:for="{{weekCanlander}}" wx:key="{{i}}" wx:for-index="index">
+            <view class='dayItemView' style="{{'background-color:'+ (index==selectedIndex? selectedColor:'#F7F7F7')+';color:'+(index==selectedIndex? 'white':'black')}}" bindtap='onSelectedDate' data-selectedDate='{{item}}' data-sIndex='{{index}}'>
+              <text class='text-28'>{{item.weekName}}</text>
+              <text class='text-38'>{{item.monthDate}}</text>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view wx:if="{{noDataShow}}" class='border-botom-gray-lr-32'></view>
+  <view wx:if="{{noDataShow}}" class='noDataView'>
+    <image class='noDataImg' src='../../images/prompt_back.png'></image>
+    <text class='text-size-36 margin-top-4'>暂无排班</text>
+  </view>
+  <view class='appointmentListView'>
+    <!-- doctorSchedulData schedulDataAll[selectedDate.date]-->
+    <view wx:for="{{doctorSchedulData}}" wx:key="{{i}}" wx:for-index="index">
+      <view class='appointmentItemView text-32'>
+        <view class='textView'>
+          <!-- 上午11时 -->
+          <text class='startTimeText textColorGray'>{{item.startDateText}}</text>
+          <view class='line display_flex_12'></view>
+          <text class='doctorStatus text-28 textColorWhite' style='{{"background-color:"+item.doctorStatusColor}}'>{{item.doctorStatusText}}</text>
+          <view class='line display_flex_12'></view>
+          <text class='endTiemText textColorGray'>{{item.endDateText}}</text>
+          <!-- 下午01时 -->
+        </view>
+        <!-- <button class='appointmentText textColorWhite' disabled="true" bindtap='gotoAppointmentDetail' data-schedul='{{item}}'>预约</button> -->
+        <!-- {{'color:white;background-color:'+(appointmentStatus === 1 ? '#F6BE69' : (appointmentStatus === 4 ? '#f4c0a6' : '#959595')) }} -->
+        <button class='appointmentText textColorWhite' style="{{'color:white;background-color:'+(!item.btnDisable ? '#F6BE69' : '#959595') }}" bindtap='gotoAppointmentDetail' data-schedul='{{item}}' data-position='{{index}}'disabled="{{item.btnDisable}}">{{item.btnText}}</button>
+      </view>
+    </view>
+  </view>
+  <view class='shareBackView' wx:if="{{isShareTag&&isShareTag!=null}}" bindtap='backIndexPage'>
+    <image class='shareBackIcon' src='../../images/share_back.png' />
+  </view>
+</view>
+<van-dialog id="van-dialog" bind:close="onClose" />

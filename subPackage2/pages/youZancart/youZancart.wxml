@@ -1,0 +1,4 @@
+<!--subPackage2//pages/youZancart/youZancart.wxml-->
+<view class="cart-view">
+  <cart class="cart" app-id="{{appId}}" shop-id="{{shopId}}" open-id="{{openId}}" refresh-flag="{{0}}"  bind:goBuy="goBuy"/>
+</view>

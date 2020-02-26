@@ -1,0 +1,118 @@
+<!--pages/report/report.wxml-->
+<!-- <van-panel custom-class="panel1" > -->
+<view class="flex" style='padding-bottom:16rpx;background:rgba(255,255,255,0.4)'>
+<view class="flex .flex-center flex-align" style='width:200rpx'>
+<image  src="../../images/report_icon.png" style='width:100rpx;margin-bottom:-16rpx' mode="widthFix" ></image>
+</view>
+<view class="rightview">
+<view>
+ <view class="title" style='display:inline-block; padding:22rpx 0'>
+ 辅诊详情
+  </view>
+   <view class=''>
+   <text class=" gray-50 ">诊断姓名：</text> <text class="gold-font">{{patientName}}</text>
+  </view>
+    <view class=''>
+   <text class="gray-50">诊断进度：</text> <text>{{status}}</text>
+  </view>
+  </view>
+ </view> 
+ </view>
+ <van-panel wx:if="{{reporting}}">
+ <view  class="title" style='padding:14px;font-size:30rpx' >
+ <text class="title-prefix"> </text>医生建议：</view>
+ <view class="gray-80" style='line-height:2;padding:0 58rpx 28rpx'>
+ {{reporting}}</view>
+ </van-panel>
+<!-- </van-panel>   -->
+<block wx:if="{{reportStatus==1}}" >
+<van-panel wx:for="{{results}}" wx:key="i" style="position:relative" >
+<image class="bg" src="/images/results_bg.png" mode="widthFix"  style='width:100%' />
+<view class="text-center" style='position:absolute;left:1.7em;top:0.7em;z-index:2;color:white;font-weight:bold;font-size:46rpx' >
+   {{resultsDetail[item].title}}
+</view>
+<view class="flex wrapper">
+<view class="dark-gold" style='width:156rpx;font-size:22rpx'>
+总体特质 <text class="prefix">|</text>
+</view>
+
+<view class="rightview smallFont">
+  <text class=""> </text> {{resultsDetail[item].characteristics}}
+ </view> 
+ </view>
+<view class="flex wrapper">
+<view class="dark-gold" style='width:156rpx;font-size:22rpx'>
+常见表现 <text class="prefix">|</text>
+</view>
+<view class="rightview smallFont">
+   <text class=""> </text> {{resultsDetail[item].performance}}
+ </view> 
+ </view><view class="flex wrapper">
+<view class="dark-gold" style='width:156rpx;font-size:22rpx'>
+心理特征 <text class="prefix">|</text>
+</view>
+<view class="rightview smallFont">
+    {{resultsDetail[item].heartCharacteristics}}
+ </view> 
+ </view><view class="flex wrapper">
+<view class="dark-gold" style='width:156rpx;font-size:22rpx'>
+病发倾向 <text class="prefix">|</text>
+</view>
+<view class="rightview smallFont">
+   {{resultsDetail[item].diseaseTendency}}
+ </view> 
+ </view><view class="flex wrapper">
+<view class="dark-gold" style='width:156rpx;font-size:22rpx'>
+适应能力 <text class="prefix">|</text>
+</view>
+<view class="rightview smallFont">
+     {{resultsDetail[item].adaptiveCapacity}}
+ </view> 
+ </view><view class="flex wrapper">
+<view class="dark-gold" style='width:156rpx;font-size:22rpx'>
+辩体描述 <text class="prefix">|</text>
+</view>
+<view class="rightview smallFont">
+     {{resultsDetail[item].defendantDescription}}
+ </view> 
+ </view>
+</van-panel>
+</block>
+<view wx:else>
+<view style="width:calc( 100vw - 50rpx ); margin-top:50rpx"> 
+<view class="custom-class van-steps van-steps--{{ direction }}">
+  <view class="van-step__wrapper">
+    <view
+      wx:for="{{ steps }}"
+      wx:key="index"
+      class="van-step  van-step--{{ direction }} {{ item.status ? 'van-step--' + item.status : '' }}"
+      style="{{ width ? 'width:' + width + 'px' : '' }}"
+    >
+      <view class="van-step__title" style=" margin-left:15px;{{ index >active ? 'color: ' + activeColor : 'color:black' }} ">
+        <view>{{ item.text }}</view>
+        <view class="">{{ item.desc }}</view>
+      </view>
+      <view class="van-step__circle-container">
+<view  wx:if="{{  index > active }}" 
+  class="van-icon van-icon van-icon--image van-icon--image  van-step__active" 
+ style="color:#fec262;font-size:1.5em" >
+<image src="/images/process_undo.png"  ></image>
+</view>
+<view   wx:else  size="1.5em"  class="van-icon van-icon van-icon--image van-icon--image  van-step__active" 
+style="color:#fec262;font-size:1.5em">
+<image src="/images/process_done.png"  ></image>
+</view>
+      </view>
+      <view wx:if="{{ index !== steps.length - 1 }}" style="{{index>active-1?'background-color:#adadad':''}}" class="van-step__line"></view>
+    </view>
+  </view>
+</view>
+</view>
+<view class="text-center title" style='padding:30rpx 0 20rpx'>
+<view style='font-size:40rpx;line-height:1.5'>查看体质报告</view>
+<view style='font-size:22rpx;line-height:1.5;color:rgba(0,0,0,0.3)'>下拉刷新</view>
+<image src="../../images/db_arrow_down.png" style="width:50rpx; "  mode="widthFix"/>
+
+</view>
+</view>
+<view wx:if="{{isIphoneX}}" style="padding-bottom:36px" ></view>

@@ -1,0 +1,33 @@
+<!--miniprogram/pages/indexArticleList/indexArticleList.wxml-->
+<view>
+  <view wx:if="{{hasData}}">
+    <scroll-view scroll-y="{{true}}" style="height: {{winHeight?winHeight+'px':'auto'}}" bindscrolltolower="searchScrollLower">
+      <view class='scrollView'>
+        <block wx:for="{{news}}" wx:key="{{i}}">
+          <view bindtap='gotoweb' class="panel--root news"data-type="{{item.type}}"data-id="{{item.id}}">
+            <view class="flex_card ">
+              <view class="image">
+                <image src="{{item.articlesCoverChart}}" mode="aspectFit"></image>
+              </view>
+              <view class="text-content">
+                <view class="text1">{{item.title}}</view>
+                <view class="text2">{{item.briefIntroduction}}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view wx:if="{{moreLoad}}"class="loadingView" hidden="{{!searchLoading}}">
+          <view class='loadingIconView'>
+            <image src='../../images/loading_icon.png' class='loadingIcon' />
+          </view>
+          <view class='loadingTitle'>正在加载更多</view>
+        </view>
+        <view class="loadingComplete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view wx:if="{{noData}}" class='noDataView'>
+    <image class='noDataImg' src='../../images/prompt_back.png'></image>
+    <text class='text-size-36 margin-top-4'>暂无数据</text>
+  </view>
+</view>

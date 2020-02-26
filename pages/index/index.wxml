@@ -1,0 +1,364 @@
+<import src='../../component/tab/tab.wxml' />
+<view style="height:100wh; padding-bottom:{{isIphoneX?'91px':'55px'}}">
+	<view wx:if="{{chose_index==1}}" class="home_page">
+		<view style='height:15.4px'></view>
+		<lk-swiper bind:carouselMapItemClick='carouselMapItemClick' img-array='{{imgArray}}'></lk-swiper>
+		<view class='flex_entry ' style='width:75vw;margin:17px auto'>
+			<view style="display:flex,flex-direction:column" bindtap="toSetMeal">
+				<view>
+					<image src="../../images/set_square.png"></image>
+				</view>
+				<view>套 餐</view>
+			</view>
+			<view style="display:flex,flex-direction:column" bindtap="toMedicalModual">
+				<view>
+					<image src="../../images/medical_square.png"></image>
+				</view>
+				<view>我的医疗</view>
+			</view>
+			<navigator url='/pages/active/active'>
+				<view>
+					<image src="../../images/event_square.png"></image>
+				</view>
+				<view>活 动</view>
+			</navigator>
+			<!-- <view>
+				<button open-type="contact" style="font-size:12px;line-height:1.5;padding:0">
+					<image src="../../images/consult.png" />
+				</button>
+				<view>咨 询</view>
+			</view> -->
+		</view>
+		<view>
+			<block wx:for="{{apponitments}}" wx:key="{{i}}">
+				<view class="order" bindtap='navigateToAppointmentDetail' data-apponitment="{{item}}">
+					<view class="display_flex direction_column">
+						<view class="display_flex direction_row" style="margin-top:10px">
+							<text class='text-size-28-black'>中优堂</text>
+							<text class='text-size-28-black' decode="true">&nbsp;-&nbsp;</text>
+							<text class='text-size-28-black'>门诊</text>
+						</view>
+						<view class="display_flex direction_row" style="margin-top:5px">
+							<image class='staffInfoImg' mode='aspectFill' src='{{item.avatar}}' />
+							<view class="display_flex direction_column" style="margin-left:5px">
+								<text class='text-size-28-black' decode="true">{{item.staffName}}&nbsp;医生</text>
+								<text class='appointmentType text-size-22' style="margin-top:5px">{{item.schedulType === '1' ? '上门出诊 ' : '医院门诊 '}}</text>
+							</view>
+						</view>
+						<view class="display_flex direction_row align_center" style="margin-top:5px">
+							<view class="roundAppointmentPeople" />
+							<view class="text-size-25-gray" style="margin-left:5px">预约人:</view>
+							<text class='text-size-28-black' decode="true">&nbsp;{{item.patientName}}</text>
+						</view>
+						<view class="display_flex direction_row align_center" style="margin-top:5px">
+							<view class="roundAppointmentTime" />
+							<view class="text-size-25-gray" style="margin-left:5px">预约时间:</view>
+							<text class='text-size-28-black' decode="true">&nbsp;{{item.startDate}}</text>
+						</view>
+					</view>
+					<view class='appointmentStatusText text-size-28-white'>{{item.sStatusObj.text}}</view>
+				</view>
+			</block>
+		</view>
+		<view class="backWhite" style="margin-left:20rpx;margin-right:20rpx">
+			<block wx:for="{{storeInfos}}" wx:key="{{i}}" wx:for-index="sindex">
+				<view class="display_flex direction_column backWhite" bindtap='navigateToStoreInfo' id="{{item.id}}" data-sindex="{{sindex}}">
+					<view style="display:flex">
+						<image class='border-gray' mode="widthFix" style="{{'width: '+ (storeInfos.length === 1 ? 'calc(100vw - 44rpx)':'48vw')}}" src="{{item.coverPhoto}}" />
+						<view class="coverPhotoTipView" style="{{'width: '+ (storeInfos.length === 1 ? 'calc(100vw - 44rpx)':'48vw')}}">
+							<text class='text-size-33-white display_flex justify_center' style="margin-top:83px">{{item.name}}</text>
+							<view class="display_flex direction_row justify_center" style="margin-top:5px">
+								<text class='text-size-28-white' >{{item.startTime}}</text>
+								<text class='text-size-28-white' decode="true">&nbsp;-&nbsp;</text>
+								<text class='text-size-28-white' >{{item.endTime}}</text>
+							</view>
+							<view class="display_flex direction_row" style="margin-top:50px;margin-left:35px">
+								<text class='text-size-28-white' decode="true">门店公告:&nbsp;</text>
+								<text class='text-size-28-white' >疫情期间请勿在公共场合流动</text>
+							</view>
+						</view>
+					</view>
+					<view class="display_flex direction_row justify_center align_center" style="margin:10px">
+						<image class='location-icon' src='/images/location.png' mode='widthFix' />
+						<text class='text-size-28-black' style="margin-left:5px" decode="true">{{item.storeAddress}}&nbsp;中优堂</text>
+					</view>
+					<view class="horizontalLineGray-2" style="margin:10px" />
+					<view class='flex_entry ' style='width:75vw;margin:17px auto'>
+						<view style="display:flex,flex-direction:column" bindtap="toSetMeal">
+							<view>
+								<image src="../../images/ic_online_service_tip.png"></image>
+							</view>
+							<view>联系客服</view>
+						</view>
+						<view style="display:flex,flex-direction:column" bindtap="toMedicalModual">
+							<view>
+								<image src="../../images/ic_storeinfo_department.png"></image>
+							</view>
+							<view>门诊介绍</view>
+						</view>
+						<navigator url='/pages/active/active'>
+							<view>
+								<image src="../../images/ic_storeinfo_doctor.png"></image>
+							</view>
+							<view>医生</view>
+						</navigator>
+					</view>
+					<view class="horizontalLineGray-2" style="margin:10px" />
+					<text class='text-size-28-black display_flex justify_center' style="margin-bottom:10px">进入门店</text>
+				</view>
+			</block>
+		</view>
+		<view class="display_flex direction_column" style="margin-left:20rpx;margin-right:20rpx;margin-top:20rpx">
+			<view class="display_flex direction_row space_between">
+				<text class='text-size-33-hot-doctor-title display_flex align_center' style="margin-bottom:10px">热门医生</text>
+				<text class='text-size-33-hot-doctor-title display_flex align_center' style="margin-bottom:10px" bindtap="moreDoctor">更多</text>
+			</view>
+			<view class="staffList">
+				<block wx:for="{{staffList}}" wx:key="{{i}}">
+					<view class="navigator" bindtap='navto' data-stfid="{{item.stfid}}">
+						<image wx:if="{{item.avatar}}" style="width:100%;height:150px" mode='aspectFill' src='{{item.avatar}}' />
+						<image wx:elif="{{item.sex=='F'}}" style="width:100%;height:150px" mode='aspectFill' src='../../images/doctorDefImgF.jpg' />
+						<image wx:else style="width:100%;height:150px" mode='aspectFill' src='../../images/doctorDefImgM.jpg' />
+						<view class="button">{{item.staffName}}</view>
+						<view style='width:133.3333px;height:1.5em;padding-top:0.5em;padding-bottom:1em;'>
+							{{item.jobTitle||" "}}</view>
+					</view>
+				</block>
+			</view>
+		</view>
+		<view wx:if="{{news.length!=0}}">
+			<view wx:for="{{news}}" wx:key="{{i}}" bindtap='gotoweb' class="news" data-type="{{item.type}}" data-id="{{item.id}}">
+				<view class="flex_card direction_column">
+					<image src="{{item.articlesCoverChart}}" mode="withFix" class="articlesCoverRound"></image>
+					<text class="text1">{{item.title}}</text>
+					<view class="display_flex direction_row justify_end align_center">
+						<image style="width:10px;height:10px" src='../../images/ic_time.png' />
+						<view class="articleAddTime" style="margin-left:10rpx"> {{item.addTime}}</view>
+					</view>
+				</view>
+			</view>
+			<view class='showMoreArticleBt' bindtap='showMoreArticle'>显示更多</view>
+		</view>
+		<!-- <lk-panel thumb="{{item.thumb}}"></lk-panel> -->
+		<!-- <view class="ad-container">
+      <view class='text1'>中和堂 膏方季开幕</view>
+      <view class="text-center relative-view">
+        <image src="../../images/ad.jpg" mode="widthFix">
+        </image>
+        <view>
+          <view class="border-font"> 广告</view>
+        </view>
+      </view>
+    </view> -->
+		<!-- <van-cell
+  title="<van-cell
+  title="查看全部内容"
+  is-link
+/> -->
+		<!-- <view style='display:flex;align-items:center'>
+      <view style='display:flex; justify-content:space-between;align-items:center;width:160px;margin:0px auto'>
+        <view style='height:1px; width:40px;background:#9f9f9f ' />
+        <view style='color:#9f9f9f;font-weight:bold;font-size:12px'>已经到底了</view>
+        <view style='height:1px; width:40px;background:#9f9f9f ' />
+      </view>
+    </view> -->
+		<!-- <button open-type="contact" style="padding:0;border-radius:50%;height:60px;width:60px;position:fixed;bottom:{{isIphoneX?'113.5px':'77.5px'}};right:12.5px;background:url({{domain}}/file/rc-upload-1551321373573342-5.jpeg);background-size:cover"> -->
+		<!-- <image src="/images/fixedCall.png" style="border-radius:50%; height:55px;width:55px" /> -->
+		<!-- </button> -->
+	</view>
+	<view wx:elif="{{chose_index==2}}" class="home_page">
+		<include src='/set/set.wxml' />
+	</view>
+	<view wx:elif="{{chose_index==3}}" class="home_page">
+		<include src='/reserve/reserve.wxml' />
+	</view>
+	<!-- <view wx:elif="{{chose_index==4}}" class="home_page">
+		<include src='/event/event.wxml' />
+	</view> -->
+	<view wx:else="{{chose_index==4}}" class="home_page">
+		<view wx:if="{{myModuleShow}}">
+			<view>
+				<navigator url="../primaryCenter/primaryCenter" class="card-container" style='background-image:url({{primary.membershipCardStyle?primary.membershipCardStyle:defaultBg+"?wx_lazy=1"}}); background-size:cover ;background-repeat:no-repeat'>
+					<view class="qrCodeView">
+						<image class="qrCode" src="../../images/noCard.png" />
+					</view>
+					<view class="userinfo">
+						<view class="nickNameContainer">
+							<open-data type="userNickName" class="nickName"></open-data>
+							<image class="arrow" src="../../images/arrow_right.png" />
+						</view>
+						<text>....</text>
+					</view>
+					<view class="integralContainer">
+						<view class="integralTitle">可用积分 <text class="integral">20</text></view>
+						<image class="arrow" src="../../images/arrow_right.png" />
+					</view>
+					<view class="couponView">
+						<text class="integralTitle">进入积分商城兑换优惠券</text>
+						<text class="date">{{primary.endTime}}</text>
+					</view>
+				</navigator>
+			</view>
+			<view class="wealthContainer">
+				<view class="wealthItemContainer">
+					<text class="wealthItemTitle">钱包余额</text>
+					<view class="wealthItemValue">¥ <text>99.99</text></view>
+				</view>
+				<view class="verticalLine" />
+				<view class="wealthItemContainer">
+					<text class="wealthItemTitle">积分</text>
+					<text class="wealthItemValue">99.99</text>
+				</view>
+				<view class="verticalLine" />
+				<view class="wealthItemContainer">
+					<text class="wealthItemTitle">优惠券</text>
+					<text class="wealthItemValue">9999</text>
+				</view>
+			</view>
+			<view style='text-align:center;margin:5% 0 0 0;'>
+				<button class="recharge_bt" bindtap='logoutClicked'>立即充值</button>
+			</view>
+			<view class="mainFunctionView">
+				<view class="display_flex space_between align_center" bindtap="selectMedical">
+					<view class="display_flex align_center">
+						<image class="functionIcon" src="../../images/ic_health_record.png" />
+						<button class="functionTitle">健康档案</button>
+					</view>
+					<image class="arrowIcon" src="../../images/arrow_right.png" />
+				</view>
+				<view class="horizontalLine" />
+				<view class="display_flex space_between align_center" bindtap="navigateToMyAppointment">
+					<view class="display_flex align_center">
+						<image class="functionIcon" src="../../images/ic_my_appointment.png" />
+						<button class="functionTitle">我的预约</button>
+					</view>
+					<image class="arrowIcon" src="../../images/arrow_right.png" />
+				</view>
+				<view class="horizontalLine" />
+				<view class="display_flex space_between align_center">
+					<view class="display_flex align_center">
+						<image class="functionIcon" src="../../images/ic_visit_record.png" />
+						<button class="functionTitle">我的就诊记录</button>
+					</view>
+					<image class="arrowIcon" src="../../images/arrow_right.png" />
+				</view>
+				<view class="horizontalLine" />
+				<view class="display_flex space_between align_center">
+					<view class="display_flex align_center">
+						<image class="functionIcon" src="../../images/ic_treatment_sheet.png" />
+						<button class="functionTitle">我的治疗单</button>
+					</view>
+					<image class="arrowIcon" src="../../images/arrow_right.png" />
+				</view>
+			</view>
+			<view class="secondFunctionView">
+				<view class="display_flex space_between align_center" bindtap="jumpOrderPage">
+					<view class="display_flex align_center">
+						<image class="functionIcon" src="../../images/ic_shop_order.png" />
+						<button class="functionTitle">商城订单</button>
+					</view>
+					<image class="arrowIcon" src="../../images/arrow_right.png" />
+				</view>
+				<view class="horizontalLine" />
+				<view class="display_flex space_between align_center" bindtap="jumpLogisticsModular">
+					<view class="display_flex align_center">
+						<image class="functionIcon" src="../../images/ic_medicine_logistics.png" />
+						<button class="functionTitle">中药物流</button>
+					</view>
+					<image class="arrowIcon" src="../../images/arrow_right.png" />
+				</view>
+				<view class="horizontalLine" />
+				<view class="display_flex space_between align_center" bindtap="jumpAuxiliaryModular">
+					<view class="display_flex align_center">
+						<image class="functionIcon" src="../../images/ic_auxiliary_diagnosis.png" />
+						<button class="functionTitle">中医辅诊</button>
+					</view>
+					<image class="arrowIcon" src="../../images/arrow_right.png" />
+				</view>
+				<view class="horizontalLine" />
+				<view class="display_flex space_between align_center">
+					<view class="display_flex align_center">
+						<image class="functionIcon" src="../../images/ic_online_service.png" />
+						<button open-type="contact" type="default-light" size="" session-from="weapp" class="functionTitle">在线客服</button>
+					</view>
+					<image class="arrowIcon" src="../../images/arrow_right.png" />
+				</view>
+				<view class="horizontalLine" />
+				<view class="display_flex space_between align_center">
+					<view class="display_flex align_center">
+						<image class="functionIcon" src="../../images/ic_basal_temperature.png" />
+						<button class="functionTitle">基础体温</button>
+					</view>
+					<image class="arrowIcon" src="../../images/arrow_right.png" />
+				</view>
+			</view>
+			<!-- <view class="demo-block__title">
+				<text></text> 我的医疗
+			</view>
+			<view class='hr '></view>
+			<view class=".van-tabbar tabbar  big">
+				<van-tabbar-item bindtap='navigateToMyDoctor'>
+					<span>私人医生</span>
+					<image slot="icon" src="../../images/doctor.png" mode="aspectFit" />
+				</van-tabbar-item>
+				<van-tabbar-item bindtap="selectMedical" data-id="31">
+					<span>健康档案</span>
+					<image slot="icon" src="../../images/health.png" mode="aspectFit" />
+				</van-tabbar-item>
+				<van-tabbar-item bindtap="navigateToMyAppointment">
+					<image slot="icon" src="../../images/appointment.png" mode="aspectFit" /> 我的预约
+				</van-tabbar-item>
+				<navigator url="../set/set">
+					<van-tabbar-item>
+						<image slot="icon" src="../../images/service.png" mode="aspectFit" /> 我的服务
+					</van-tabbar-item>
+				</navigator>
+			</view> -->
+			<!-- <view style='background:#fff'>
+      <view class="hr_scale-half" style='margin:0 auto ; width:95% ' />
+    </view>
+    <view class="van-tabbar big">
+      <van-tabbar-item>
+        <image slot="icon" src="../../images/bodycheck.png" mode="aspectFit" /> 我的体检
+      </van-tabbar-item>
+    </view> -->
+			<!-- <view style="background:#fff; margin-top:15px;">
+				<view class="demo-block__title">
+					<text></text> 常用工具
+				</view>
+				<view class='hr'></view>
+				<view class="tabbar big van-tabbar">
+					<van-tabbar-item bindtap="selectTool" data-id="21">
+						<image slot="icon" src="../../images/myorder.png" mode="aspectFit" /> 我的订单
+					</van-tabbar-item>
+					<van-tabbar-item bindtap="selectTool" data-id="22" style="position:relative">
+						<image slot="icon" src="../../images/caller.png" mode="aspectFit" />
+						<button open-type="contact" type="default-light" size="" session-from="weapp" style='position:absolute;top:0px;left:0px;opacity:0;width:100%;height:50px' /> 在线客服
+					</van-tabbar-item>
+					<navigator url="../address/delivery">
+						<van-tabbar-item bindtap="selectTool" data-id="25">
+							<image slot="icon" src="../../images/address.png" mode="aspectFit" /> 小优配送
+						</van-tabbar-item>
+					</navigator>
+					<navigator url="../report/reportList">
+						<van-tabbar-item bindtap="selectTool" data-id="26">
+							<image slot="icon" src="../../images/fuzhen.png" mode="aspectFit" /> 中医辅诊
+						</van-tabbar-item>
+					</navigator>
+					<van-tabbar-item bindtap="selectTool" data-id="23" style='visibility:hidden;'>
+						<image slot="icon" src="../../images/caller_plus.png" mode="aspectFit" /> 邀请有奖
+					</van-tabbar-item>
+					<van-tabbar-item bindtap="selectTool" data-id="24" style='visibility:hidden;'>
+						<span>我的卡券</span>` 
+						<image slot="icon" src="../../images/coupen.png" mode="aspectFit" />
+					</van-tabbar-item>
+				</view>
+			</view> -->
+			<!-- <view style='text-align:center;margin:5% 0 0 0;'>
+				<button class="save_file_bt" bindtap='logoutClicked'>退出登录</button>
+			</view> -->
+		</view>
+	</view>
+</view>
+<template is="tab" data="{{chose_index,isIphoneX}}" style="padding-bottom:26px;"></template>
+<van-dialog id="van-dialog" bind:close="onClose" />

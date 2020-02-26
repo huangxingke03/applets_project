@@ -1,0 +1,30 @@
+<!--component/doctoritem/doctoritem.wxml-->
+<view class='doctorItem' wx:for="{{doctorArry}}" wx:key="{{i}}" wx:for-index="position" bindtap='doctorItemEvent' data-doctor='{{item}}'>
+	<view class="flex_row">
+		<image class='doctorImg' mode='aspectFill' src='{{item.avatarUrl}}'></image>
+		<view class='doctorInfoView'>
+			<view class='doctorInfoTopView'>
+				<view class='doctorInfoNameView'>
+					<text class='doctorInfoName'>{{item.staffName}}</text>
+					<!-- <image wx:if="{{item.expertCategory==2}}" src='../../images/special_need_icon.png' class='special_need_icon' /> -->
+					<text wx:if="{{item.expertCategory==2}}" class='specialTitle'>[特需专家]</text>
+				</view>
+			</view>
+			<view wx:if="{{item.labArray&&item.labArray.length!=0}}">
+				<view class='mainview'>
+					<block wx:for="{{item.labArray}}" wx:key="{{i}}">
+						<view class='viewJobTitle'>
+							<view class="roundShape" />
+							<text class="jonTitle">{{item}}</text>
+						</view>
+					</block>
+				</view>
+			</view>
+			<view class='reservationView'>
+				<text class='reservation'>预约</text>
+			</view>
+		</view>
+	</view>
+	<view class='line' />
+	<text class='doctorInfoText'>{{item.staffInfo}}</text>
+</view>

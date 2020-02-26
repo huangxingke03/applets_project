@@ -1,0 +1,7 @@
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular interval="{{interval}}" duration="{{duration}}">
+  <view wx:for="{{imgArray.length!=0?imgArray:imgUrls}}" wx:key="{i}" bindtap='carouselMapItemEvent' data-index='{{position}}'data-path='{{item.path}}'data-type='{{item.type}}'wx:for-index="position">
+    <swiper-item>
+      <image src="{{(imgArray.length!=0?item.coverChart:item)+'?wx_lazy=1'}}" class="slide-image swiper-card-container" />
+    </swiper-item>
+  </view>
+</swiper>

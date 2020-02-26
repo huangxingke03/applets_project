@@ -1,0 +1,10 @@
+
+  <van-card 
+      desc="{{desc}}"
+      title="{{title}}"
+      thumb="{{ thumb }}"
+      num="{{num}}"
+      custom-class="root"
+  >
+
+  </van-card>

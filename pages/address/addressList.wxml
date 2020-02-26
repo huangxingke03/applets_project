@@ -1,0 +1,119 @@
+<!--pages/address/addressList.wxml-->
+<!-- <view wx:if="{{data.length<1}}" class='noDataView'>
+    <image class='noDataImg' src='../../images/prompt_back.png'></image>
+    <text class='text-size-36 margin-top-4'>暂无数据</text>
+  </view> -->
+<view>
+  <view wx:if="{{total>0}}" style="height:32px">
+  </view>
+
+
+  <!-- <van-radio-group value="{{ radio||'0' }}" > -->
+
+  <demo-block>
+    <view class="demo-block__title">
+      <text class="title_prefix" decode="{{true}}"></text> 配送信息列表</view>
+    <block wx:for="{{data}}" wx:key="{{i}}">
+      <van-swipe-cell right-width="{{130}}" close="outside">
+        <van-cell-group>
+
+          <view data-id="{{item.id}}" border="{{false}}" class="van-cell  van-cell--borderless">
+            <view style="{{ titleStyle }}" class="van-cell__title title-class">
+              <view slot="title">
+                <view class="van-cell-text" bind:tap="onClick" data-id="{{item.id}}">
+                  <!-- <van-radio
+       name="{{item.id}}"
+ checked-color="#F8C574"> -->
+
+                  {{item.userName}}
+                  <text class="smallFont gray-50">{{item.telNumber}}</text>
+                  <view class="van-cell__label">
+                    <view wx:if="{{item.id==radio}}" style="color:#fe8e15;background:#fef7ea" class="van-tag van-tag--round ">
+                      默认
+                    </view>
+                    <view wx:if="{{item.tag}}" style="color:#fe8e15;background:#fef7ea" class="van-tag van-tag--round">
+                      {{item.tag}}
+                    </view>
+                    <text wx:if="{{item.isDefault==1}}" decode='{{true}}'>&nbsp;&nbsp;</text>
+                    <text> {{item.cityName}}  {{item.provinceName}}  {{item.countyName}}  {{item.detailInfo}}
+     </text> </view>
+
+                  <!-- </van-radio> -->
+                </view>
+              </view>
+            </view>
+            <form bindsubmit='addOne' report-submit='true' data-type="1" data-id="{{item.id}}">
+              <button class="van-cell__value value-class" form-type='submit'> 我要快递</button>
+            </form>
+          </view>
+
+          <!-- 
+    <van-cell
+  data-id="{{item.id}}"
+    border="{{false}}"
+      data-name="{{item.id}}"
+       data-type="1" 
+       bind:click="addOne"
+  >
+  
+  </van-cell> -->
+
+        </van-cell-group>
+
+        <view slot="right" class="right-area">
+          <view>
+            <text class="edit" data-id="{{item.id}}" bindtap="edit">编辑</text>
+            <text class="delete" data-id="{{item.id}}" bindtap="delete">删除</text>
+          </view>
+        </view>
+
+        <view slot="left-icon">
+        </view>
+      </van-swipe-cell>
+
+    </block>
+
+  </demo-block>
+  <view style='height:25rpx' />
+  <demo-block>
+    <view class="demo-block__title">
+      <text class="title_prefix"></text> 其它配送选择
+    </view>
+
+    <view style="height:1rpx" class="van-hairline--bottom"></view>
+
+    <view class="van-cell  van-cell--borderless">
+      <view style="{{ titleStyle }}" class="van-cell__title title-class">
+        <view slot="title">
+          <view class="van-cell-text" bind:tap="onClick" data-id="0">
+            <!-- <van-radio
+       name="{{item.id}}"
+ checked-color="#F8C574"> -->
+            自提
+            <view class="van-cell__label">
+              <view wx:if="{{radio==0}}" style="color:#fe8e15;background:#fef7ea" class="van-tag van-tag--round ">
+                在门诊部自提
+              </view>
+            </view>
+
+            <!-- </van-radio> -->
+          </view>
+        </view>
+      </view>
+      <form bindsubmit='addOne' report-submit='true' data-type="2" data-id="0">
+        <button class="van-cell__value value-class" form-type='submit'> 我要自提</button>
+      </form>
+    </view>
+  </demo-block>
+  <!-- </van-radio-group> -->
+
+  <button bindtap="actionshow" style='margin-top:60rpx' class="loginBtn">添加配送信息</button>
+
+</view>
+
+
+<van-action-sheet show="{{show}}" actions="{{actions}}" bind:select="onSelect" cancel-text="取消" bind:close="close" bind:cancel="close" />
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" overlay="{{false}}" closeOnClickOverlay="{{true}}" />
+
+<van-notify id="custom-selector" />

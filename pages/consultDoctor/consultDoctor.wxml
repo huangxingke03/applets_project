@@ -1,0 +1,20 @@
+<!--pages/consultDoctor/consultDoctor.wxml-->
+<!-- <text>pages/consultDoctor/consultDoctor.wxml</text> -->
+<view>
+  <view>
+    <!-- <web-view >https://iad-dev.lkimt.com/#/zhongyouHall_management/store_info/10 -->
+    <!-- <web-view src='https://mp.weixin.qq.com/s/qCdsZn7eCd6nZT8EHB5nog'></web-view> -->
+    <view class='imgView'>
+      <image class='qrCodeImg' mode='aspectFill' src='{{imgUrls[0]}}' data-src='{{imgUrls[0]}}' bindtap='scanQrCode'></image>
+    </view>
+
+    <view class='imgView'>
+      <image class='qrCodeImg' mode='aspectFill' src='{{imgUrls[1]}}' data-src='{{imgUrls[1]}}' bindtap='scanQrCode'></image>
+    </view>
+    <view class='imgView'>
+      <image class='qrCodeImg1' mode='aspectFill' src='{{imgUrls[2]}}' data-src='{{imgUrls[2]}}' bindtap='scanQrCode'></image>
+    </view>
+      
+    <!-- </web-view> -->
+  </view>
+</view>

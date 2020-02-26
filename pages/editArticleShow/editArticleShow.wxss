@@ -1,0 +1,76 @@
+/* miniprogram/pages/editArticleShow/editArticleShow.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #ededed;
+}
+
+.window_view {
+  height: 100%;
+  width: 100%;
+}
+
+.articleInfo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80rpx;
+}
+
+.topLine {
+  background: #d7d7d7;
+  width: 100%;
+  margin-top: 20rpx;
+  height: 1rpx;
+}
+
+.articleTitle {
+  color: black;
+  font-size: 42rpx;
+  margin-left: 29rpx;
+  margin-top: 32rpx;
+  font-weight: bold;
+}
+
+.authorTime {
+  display: flex;
+  flex-direction: row;
+  margin-left: 29rpx;
+  margin-top: 25rpx;
+}
+
+.articleAuthor {
+  color: #3e6ea6;
+  font-size: 29rpx;
+}
+
+.articleCreateTime {
+  color: #949494;
+  font-size: 29rpx;
+  margin-left: 30rpx;
+}
+
+.articleContent {
+  margin-left: 29rpx;
+  margin-top: 25rpx;
+  margin-right: 29rpx;
+  font-size: 30rpx;
+}
+
+.articleMiss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.articleNoIcon {
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 100rpx;
+}
+
+.articleNoText {
+  color: black;
+  font-size: 35rpx;
+  margin-top: 30rpx;
+}

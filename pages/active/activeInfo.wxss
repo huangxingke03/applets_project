@@ -1,0 +1,149 @@
+/* pages/active/activeInfo.wxss */
+.card-container{
+  /* background-color:orange;  */
+  /* width:calc(100%); */
+     height:calc(( 100vw - 25px ) / 7 * 3 );
+  margin:0 -12.5px 16.6666px ;
+  /* border-radius:15px; */
+  color:#fff;
+   font-size:14px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+    box-shadow: 6px 6px 14px rgba(195, 190, 186, 1.000);
+
+}
+page>view>view{
+  width:calc(100% - 25px);
+  margin:0px auto;
+}
+.title{
+  font-size: 19px;
+  font-weight: bold;
+}
+.details{
+  /* font-size:12px; */
+  color:rgba(0,0,0,0.7);
+  padding:20px 0;
+  border-bottom: 1px solid gainsboro;
+  /* width:calc(100% - 25px); */
+    margin:0px auto;
+    display: block;
+
+}
+.pro_title{
+  font-size: 36rpx;
+  margin:9.33px 0;
+}
+.userinfo-avatar {
+height:83.33px;
+width:83.33px;
+border-radius:50%;
+background-size:cover;
+background-color:white;
+border:1px solid #efe3d1;
+}
+.ProList{
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x:  scroll;
+}
+.pro{
+  margin:7.33px;
+  display: flex;
+  flex-direction: column;
+  width:83.33px;
+  font-size: 16px;
+text-align: center;
+}
+.loginBtn {
+  display: block;
+  height: 80rpx;
+  width: 210px;
+  margin: 0 auto; 
+  border-radius: 26rpx;
+  background-color: #EF9322;
+  text-align: center;
+  color: white;
+  line-height: 80rpx;
+  font-size: 20px;
+  background: linear-gradient(to right,#f7c674,#f19722);
+  border-right: 2rpx solid #DEC2A7;
+  border-bottom: 2rpx solid linear-gradient(to right,#f7c674,#DEC2A7);
+  box-shadow: 4px 4px 10px rgba(195, 190, 186, 1.000);
+}
+.count{
+  font-size: 13.33px;
+ margin:15px 0;
+  text-align: center;
+}
+
+.position-relative {
+  position: relative;
+}
+.store-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+.storeStateView {
+color:gray;
+margin-top:20rpx;
+display:flex;
+flex-flow:row;
+font-size:14px;
+  flex: 1;
+}
+.store-status {
+  
+  display: inline-block;
+  margin-left: 20rpx;
+}
+.store-info-cell {
+  /* height: 64px; */
+  /* margin-left: 32rpx;
+  margin-right: 32rpx; */
+  padding-top: 1%;
+  padding-bottom: 3%; 
+  align-items: center; 
+  /* margin: 10rpx 32rpx; */
+}
+.display_flex {
+  display: flex;
+}
+.border-botom-gray {
+  /* margin-top:20rpx;  */
+  border-bottom: 2rpx solid rgb(217, 218, 220);
+}
+.store-text-36 {
+  font-size: 36rpx;
+}
+.font-size-16{
+    font-size: 16px;
+
+}
+page{
+  overflow-y:auto !important
+}
+.topLine {
+  background: #d7d7d7;
+  width: 100%;
+  margin-top: 20rpx;
+  height: 1rpx;
+}
+.articleMiss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.articleNoIcon {
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 100rpx;
+}
+.articleNoText {
+  color: black;
+  font-size: 35rpx;
+  margin-top: 30rpx;
+}

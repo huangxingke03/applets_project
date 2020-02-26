@@ -1,0 +1,37 @@
+<!--miniprogram/pages/doctorScreening/doctorScreening.wxml-->
+<view class='window_view'>
+  <scroll-view scroll-y="{{verticalSlidingTag}}" style="height:100%" bindscrolltolower="slideLoadData">
+    <view class='main-view'>
+      <view class='main-search-view'>
+        <view class='search-view' bindtap='clickInputBox'>
+          <image class='search-icon' src='../../images/search_icon.png'></image>
+          <input wx:if="{{startChoseContion}}" class='search-input' placeholder="点击输入医生名字进行搜索" placeholder-class="placeholder" bindinput='getInputName' value='{{inputName}}'></input>
+          <input wx:if="{{endChoseContion}}" class='search-input' value='{{showInputValue}}' placeholder="点击输入医生名字进行搜索" bindinput='getSelectInfo' disabled='true'></input>
+        </view>
+        <text class='clear-bt' bindtap='filterEvent' wx:if="{{startFilterTag}}">筛选</text>
+        <text class='clear-bt' bindtap='clearEvent' wx:if="{{startClearTag}}">清除</text>
+      </view>
+      <view class='filter-selection-back' wx:if="{{startChoseContion}}">
+        <view class='filter-selection'>
+          <chose-item item-title='科室选择' resource-array="{{departmentArray}}" select-department-id="{{currentDepartMentId}}" bind:choseDepartment='choseDepartment' />
+          <chose-item item-title='类别选择' resource-array="{{doctorKindArray}}" select-category-id="{{currentCategoryId}}" department-tag="{{false}}" category-tag="{{true}}" bind:choseCategory='choseCategory' />
+          <cancle-sure-bt bind:cancelEvent='cancelEvent' bind:sureEvent='sureEvent'></cancle-sure-bt>
+        </view>
+      </view>
+      <view wx:if="{{hasData}}" class='doctor-list-view'>
+        <doctor-item doctor-arry="{{staffInfos}}" bind:doctorItemEvent='doctorItemEvent'></doctor-item>
+        <view wx:if="{{moreLoad}}" class="loadingView" hidden="{{!searchLoading}}">
+          <view class='loadingIconView'>
+            <image src='../../images/loading_icon.png' class='loadingIcon' />
+          </view>
+          <view class='loadingTitle'>正在加载更多</view>
+        </view>
+        <view class="loadingComplete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+      </view>
+      <view wx:if="{{noData}}" class='noDataView'>
+        <image class='noDataImg' src='../../images/prompt_back.png'></image>
+        <text class='text-size-36 margin-top-4'>暂无数据</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

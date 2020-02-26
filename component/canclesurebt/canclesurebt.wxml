@@ -1,0 +1,9 @@
+<!--component/canclesurebt/canclesurebt.wxml-->
+<view class='main-bt-back'>
+  <view class='cancle-view' id='cancel' bindtap='cancelEvent'>
+    <text class='cancle-bt'>取消</text>
+  </view>
+  <view class='sure-view' id='sure' bindtap='sureEvent'>
+    <text class='sure-bt'>确定</text>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+<!--pages/report/reportList.wxml-->
+<!--pages/address/delivery.wxml-->
+
+<view wx:if="{{dataArray&&dataArray.length>0}}" style='height:100%'>
+	<scroll-view scroll-y="{{verticalSlidingTag}}" style="height: {{winHeight?winHeight+'px':'auto'}}" bindscrolltolower="searchScrollLower">
+		<view class='scrollView'>
+			<block wx:for="{{dataArray}}" wx:key="{{i}}">
+				<navigator url='report?id={{item.id}}&&pid={{item.pid}}&&name={{item.patientName}}'>
+					<van-panel custom-class="panel">
+						<view class="flex">
+							<view style="background:#f7c674;width:18rpx;border-radius:12rpx 0 0 12rpx"></view>
+							<view class="halfbg">
+								<image src="{{'../../images/report_icon.png'}}" style='width:86rpx;' mode="widthFix"></image>
+							</view>
+							<view class="rightview">
+								<view>
+									<view class="flex-bet ">
+										<view class="title" style='display:inline-block; padding:22rpx 0'>
+											{{ item.patientName}}
+										</view>
+										<view class="smallFont ">
+											<text wx:if="{{item.reportStatus}}" class="tag-green"> {{item.reportStatus?"已出报告":"未出报告"}}</text>
+											<text wx:else class="tag-brown"> {{item.reportStatus?"已出报告":"未出报告"}}</text>
+										</view>
+									</view>
+									<view class=" van-hairline--bottom" style='padding-bottom:28rpx'>
+										<view style=' display: flex; align-items:center'>
+											<text>{{item.createdAt}}</text>
+											<text class="gray-50 ">{{getLogisticsStatus[item.logisticsStatus]}}</text>
+										</view>
+
+									</view>
+									<view style='padding-top:14rpx'>
+										<text class="golden smallFont" wx:for="{{item.results}}" wx:key="{{i}}"> {{resultsDetail[item].title}} </text>
+										<text class="gray smallFont" wx:if="{{!item.results}}"> {{"未出体质报告，请耐心等候"}}</text>
+									</view>
+								</view>
+							</view>
+						</view>
+					</van-panel>
+				</navigator>
+			</block>
+			<view wx:if="{{moreLoad}}" class="loadingView" hidden="{{!searchLoading}}">
+				<view class='loadingIconView'>
+					<image src='../../images/loading_icon.png' class='loadingIcon' />
+				</view>
+				<view class='loadingTitle'>正在加载更多</view>
+			</view>
+			<view class="loadingComplete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+		</view>
+	</scroll-view>
+</view>
+<view wx:else class='noDataView'>
+	<image class='noDataImg' src='../../images/prompt_back.png'></image>
+	<text class='text-size-36 margin-top-4'>暂无数据</text>
+</view>
+<view wx:if="{{isIphoneX}}" style="padding-bottom:36px"></view>
+<view class="add_visit_record_container">
+	<image class="add_visit_record_image" src="../../images/tab_order.jpg" bindtap="addVisitReord" />
+</view>

@@ -1,0 +1,14 @@
+/* pages/protocol/protocol.wxss */
+.main{
+  width:calc(100% - 25px);
+  margin:0 auto
+}
+view {
+  font-size:13.3333px;
+}
+text{
+   font-size:13.3333px;
+   line-height:2;
+      /* padding-bottom:0.5em; */
+
+}

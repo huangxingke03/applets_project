@@ -1,0 +1,22 @@
+/* pages/webview/webview.wxss */
+.topLine {
+  background: #d7d7d7;
+  width: 100%;
+  margin-top: 20rpx;
+  height: 1rpx;
+}
+.articleMiss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.articleNoIcon {
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 100rpx;
+}
+.articleNoText {
+  color: black;
+  font-size: 35rpx;
+  margin-top: 30rpx;
+}

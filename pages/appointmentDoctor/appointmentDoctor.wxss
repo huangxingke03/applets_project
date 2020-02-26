@@ -1,0 +1,572 @@
+/* pages/oppointmentDoctor/oppointmentDoctor.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+}
+
+.storeInfoPage {
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+}
+
+.storeImgView {
+  margin-left: 32rpx;
+  margin-bottom: 32rpx;
+  margin-top: 4%;
+  width: calc(50% - 64rpx);
+  height: calc((52vw - 64rpx) / 2 * 2.5);
+  border: 1px solid transparent;
+  border-top: 0px;
+  border-left: 0px;
+  /* border-radius: 18rpx; */
+  background-color: transparent;
+  /* box-shadow: 4px 4px 8px rgb(228, 225, 222); */
+  position: relative;
+}
+
+.storeImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 1px solid transparent;
+  border-radius: 17rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.storeImgView1 {
+  margin: 32rpx;
+  padding-top: 44%;
+  border: 1px solid transparent;
+  border-top: 0px;
+  border-left: 0px;
+  border-radius: 24rpx;
+  background-color: transparent;
+  box-shadow: 6px 6px 14px rgba(195, 190, 186, 1.000);
+  position: relative;
+}
+
+.storeImg1 {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 1px solid transparent;
+  border-radius: 24rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.store-info-cell {
+  /* height: 64px; */
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  /* padding-top: 20rpx; */
+  padding-bottom: 20rpx;
+  align-items: center;
+}
+
+.doctor-info {
+  width: 50%;
+  padding-bottom: 20rpx;
+  margin-top: 16%;
+  align-items: center;
+}
+
+.display_flex {
+  display: flex;
+  flex-direction: row;
+  padding-right: 20rpx;
+}
+
+.doctor_name_display_flex {
+  display: flex;
+  flex-direction: row;
+  margin-left: 32rpx;
+}
+
+.doctor_position_display_flex {
+  display: flex;
+  flex-direction: row;
+  padding-right: 20rpx;
+  margin-left: 32rpx;
+}
+
+.text-36 {
+  font-size: 36rpx;
+}
+
+.margin-tb-12 {
+  margin: 12rpx 0;
+}
+
+.margin-line {
+  margin-top: 10rpx;
+  margin-bottom: 5rpx;
+  margin-left: 31rpx;
+}
+
+.margin-top-12 {
+  margin-top: 12rpx;
+}
+
+.height-2 {
+  height: 2rpx;
+}
+
+.border-top-botom-gray {
+  border-top: 2rpx solid rgb(217, 218, 220);
+  border-bottom: 2rpx solid rgb(217, 218, 220);
+}
+
+.border-botom-gray {
+  /* margin-top:20rpx;  */
+  border-bottom: 2rpx solid rgb(217, 218, 220);
+}
+
+.border-botom-gray-lr-32 {
+  border-bottom: 2rpx solid rgb(217, 218, 220);
+  margin: 0 32rpx;
+  height: 2rpx;
+}
+
+.border-botom-f4941f {
+  /* margin-top:20rpx;  */
+  border-bottom: 8rpx solid #f4941f;
+}
+
+.store-text-56-bold {
+  font-weight: bold;
+  font-size: 56rpx;
+  padding-right: 4rpx;
+}
+
+.store-text-44-bold {
+  font-weight: bold;
+  font-size: 40rpx;
+  padding-right: 4rpx;
+}
+
+.display_flex_1 {
+  display: flex;
+  flex: 1;
+}
+
+.margin-right-20 {
+  margin-right: 20rpx;
+}
+
+.height-80 {
+  height: 80rpx;
+}
+
+.height-50 {
+  height: 50rpx;
+}
+
+.years-text {
+  color: #9e9e9e;
+  /* margin-right: 0.6rem; */
+  width: 48%;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.overflow_hide {
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.max_line_1 {
+  max-lines: 1;
+}
+
+.max_line_2 {
+  max-lines: 2;
+}
+
+.doctorInfoView {
+  margin-left: 32rpx;
+  margin-top: 25rpx;
+  margin-right: 20rpx;
+}
+
+.doctorInfoText {
+  font-size: 32rpx;
+  color: black;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-height: 48rpx;
+}
+
+.selectDateView {
+  margin: auto;
+}
+
+.canlanderView {
+  height: calc((90vw / 282 * 40)+32);
+  padding: 2% 0;
+  /* height: 110rpx;
+  padding-top: 12rpx;
+  padding-bottom: 12rpx; */
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+}
+
+.clanderScroll {
+  /* height: 128rpx; *//* calc(90vw / 282 * 49); */
+  width: 101%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.dayItemView {
+  /* height: 96rpx; */
+  width: 133rpx;
+  /* height: calc(90vw / 282 * 40); */
+  border: 1rpx solid transparent;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8rpx;
+}
+
+.dayItemView text {
+  display: block;
+  text-align: center;
+  /* height: calc(90vw / 282 * 20); */
+}
+
+.text-28 {
+  font-size: 28rpx;
+}
+
+.text-38 {
+  font-size: 38rpx;
+}
+
+.text-32 {
+  font-size: 32rpx;
+}
+
+.appointmentListView {
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  padding-top: 5%;
+  padding-bottom: 200rpx;
+  align-items: center;
+}
+
+.appointmentItemView {
+  padding-top: 2%;
+  padding-bottom: 6%;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.textColorGray {
+  color: #959595;
+}
+
+.textColorWhite {
+  color: white;
+}
+
+.startTimeText {
+  margin-right: 3%;
+  width: 20%;
+}
+
+.endTiemText {
+  margin-left: 3%;
+  width: 20%;
+}
+
+.line {
+  width: 10%;
+  height: 3rpx;
+  background-color: #6f6f6f;
+  display: inline-block;
+}
+
+.doctorStatus {
+  background: #9c6311;
+  margin: 0 8rpx;
+  padding: 0 16rpx;
+}
+
+.textView {
+  width: 78%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  text-align: center;
+}
+
+.display_flex_12 {
+  display: flex;
+  flex: 0.5;
+}
+
+.appointmentText {
+  background: #f6be69;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-left: 3%;
+  margin-right: 5rpx;
+  width: 28%;
+  color: white;
+  display: inline-block;
+  text-align: center;
+}
+
+.appointmentTextSelect {
+  background: #959595;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-left: 3%;
+  color: white;
+  margin-right: 5rpx;
+  width: 28%;
+  display: inline-block;
+  text-align: center;
+}
+
+.noDataView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 9%;
+}
+
+.noDataImg {
+  width: 450rpx;
+  height: 270rpx;
+}
+
+.text-size-36 {
+  font-size: 36rpx;
+  display: flex;
+}
+
+.margin-top-4 {
+  margin-top: 4%;
+}
+
+.mainview {
+  overflow: hidden;
+  margin-left: 16rpx;
+  margin-top: 12rpx;
+  max-height: 218rpx;
+}
+
+.viewJobTitle {
+  display: inline-block;
+}
+
+.jonTitle {
+  line-height: 39rpx;
+  font-size: 25rpx;
+  color: #f8c574;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  border-radius: 10rpx;
+  border: 1px solid #f8c574;
+  text-align: center;
+  margin-left: 10rpx;
+  display: flex;
+}
+
+.specialTitle {
+  line-height: 39rpx;
+  font-size: 20rpx;
+  color: white;
+  padding-left: 9rpx;
+  padding-right: 9rpx;
+  border-radius: 10rpx;
+  background: red;
+  border: 1px solid transparent;
+  text-align: center;
+  margin-left: 10rpx;
+  display: flex;
+}
+
+.viewStaffName {
+  margin-left: 11rpx;
+}
+
+.viewStaffInfoLine {
+  margin-left: 11rpx;
+}
+
+.pad-right-20 {
+  padding-right: 20rpx;
+}
+
+.mainDoctorInfo {
+  width: 100%;
+  height: 710rpx;
+  position: relative;
+}
+
+.doctorInfoOneBack {
+  width: 100%;
+  background: #f8c574;
+  height: 390rpx;
+  position: absolute;
+  z-index: 1;
+}
+
+.doctorInfoTwoBack {
+  width: 90%;
+  margin-top: 12%;
+  margin-left: 5%;
+  background-color: #fff;
+  border-bottom: 2rpx solid #f8f8f8;
+  box-shadow: 0 8px 11px 0px #dfdfdf;
+  position: absolute;
+  height: 598rpx;
+  z-index: 2;
+  border-radius: 17rpx;
+}
+
+.display_flex_doctor_info {
+  display: flex;
+  flex-direction: row;
+  background: transparent;
+}
+
+.doctorInfoColumn {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  z-index: 3;
+  position: absolute;
+  margin-left: 5%;
+}
+
+.doctorNameItem {
+  display: flex;
+  flex-direction: row;
+  margin-left: 25rpx;
+  height: 64rpx;
+  align-items: center;
+}
+
+.itemIcon {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.doctorName {
+  font-weight: bold;
+  font-size: 42rpx;
+  margin-left: 30rpx;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.workYearItem {
+  display: flex;
+  flex-direction: row;
+  margin-left: 25rpx;
+  height: 64rpx;
+  align-items: center;
+}
+
+.doctorWorkYear {
+  font-size: 38rpx;
+  margin-left: 30rpx;
+  color: #a5a5a5;
+  line-height: 31rpx;
+  text-align: center;
+}
+
+.doctorPositionItem {
+  display: flex;
+  flex-direction: row;
+  margin-left: 25rpx;
+  height: 64rpx;
+  align-items: center;
+}
+
+.doctorPosition {
+  font-size: 42rpx;
+  margin-left: 30rpx;
+  color: black;
+  line-height: 42rpx;
+  text-align: center;
+}
+
+.thin_line {
+  background-color: #d2d2d2;
+  height: 3rpx;
+  margin-left: 25rpx;
+  margin-top: 15rpx;
+}
+
+.thin_line_full {
+  background-color: #d2d2d2;
+  height: 3rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+}
+
+.shareBackView {
+  position: fixed;
+  right: 32rpx;
+  bottom: 50rpx;
+}
+
+.shareBackIcon {
+  width: 80rpx;
+  height: 96rpx;
+}
+
+.main-view {
+  width: 100%;
+  height: 100%;
+}
+
+.main-appointment-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50rpx;
+}
+
+.special_need_icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}

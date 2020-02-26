@@ -1,0 +1,469 @@
+/* pages/oppointmentDoctor/oppointmentDoctor.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #f6f7f8;
+}
+
+.staffInfoPage {
+  background-color: #f6f7f8;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.vanTabsView {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.swiper {
+  position: relative;
+}
+
+.infoView {
+  width: calc(60vw);
+  margin-left: 10rpx;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.display-block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.docotorName {
+  color: black;
+  line-height: 40rpx;
+  top: 0;
+  left: 0;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.inline-block {
+  height: 30rpx;
+}
+
+.jonTitle {
+  margin-left: 16rpx;
+  overflow: hidden;
+}
+
+.title {
+  margin-left: 0rpx;
+}
+
+.title text {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #9e9e9e;
+  padding-left: 16rpx;
+  padding-right: 16rpx;
+  border: 1px solid #9e9e9e;
+  text-align: center;
+  max-lines: 1;
+}
+
+.display-flex-1-padd-10 {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding: 10rpx 0;
+}
+
+.text-36 {
+  font-size: 36rpx;
+}
+
+.btnsView {
+  width: 100%;
+  height: 50rpx;
+  position: relative;
+  color: white;
+  display: flex;
+}
+
+.btnsView view {
+  height: 100%;
+  display: flex;
+}
+
+.width-50 {
+  width: 36%;
+}
+
+.btnsView button {
+  height: 100%;
+  width: 36%;
+  color: white;
+}
+
+.font-size-20 {
+  text-align: center;
+  line-height: 56rpx;
+  font-size: 40rpx;
+}
+
+.font-size-18 {
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 36rpx;
+}
+
+.consultBtn {
+  /* background-color: #124395; */
+  text-align: center;
+}
+
+.oppointmentBtn {
+  /* background-color: #EE501A; */
+  /* margin-left: 22rpx; */
+  margin-right: 0;
+}
+
+.dataAllLoaded {
+  font-size: 30rpx;
+  width: 100%;
+  color: #9e9e9e;
+  text-align: center;
+  padding: 0rpx 0 20rpx 0;
+}
+
+.noDataView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 9%;
+}
+
+.noDataImg {
+  width: 450rpx;
+  height: 270rpx;
+}
+
+.text-size-36 {
+  font-size: 36rpx;
+  display: flex;
+}
+
+.margin-top-4 {
+  margin-top: 4%;
+}
+
+.viewJobTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.jonTitle {
+  line-height: 39rpx;
+  font-size: 25rpx;
+  color: #95631b;
+  margin-left: 10rpx;
+}
+
+.mainview {
+  max-height: 160rpx;
+  margin-top: 8rpx;
+  margin-left: 22rpx;
+  overflow: hidden;
+}
+
+.loadingView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20rpx;
+  height: calc(100vw/100*15);
+  width: 100%;
+}
+
+.loadingTitle {
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.loadingIconView {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.loadingIcon {
+  width: 40rpx;
+  height: 40rpx;
+  animation: rotate 2s linear infinite;
+}
+
+.loadingComplete {
+  text-align: center;
+  margin-top: 20rpx;
+  margin-bottom: 70rpx;
+}
+
+.storeIcon {
+  margin-left: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.medicalIcon {
+  margin-left: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.doctorInfoName {
+  color: black;
+  text-align: center left;
+  font-size: 40rpx;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.line {
+  background-color: #d9d9d9;
+  height: 3rpx;
+  margin-left: 22rpx;
+  margin-top: 10rpx;
+  margin-right: 24rpx;
+}
+
+.doctorInfoText {
+  display: block;
+  font-size: 26rpx;
+  color: #555657;
+  max-height: 80rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  margin: 25rpx 22rpx;
+}
+
+.staffInfoImg {
+  width: 180rpx;
+  height: 240rpx;
+  border-radius: 16rpx;
+  box-shadow: 3px 3px 8px rgb(228, 225, 222);
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+}
+
+.staffInfoItem {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 26rpx;
+  height: 100%;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+
+.doctorInfoView {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw/100*65);
+  position: relative;
+}
+
+.doctorInfoTopView {
+  display: flex;
+  flex-direction: row;
+  height: 67rpx;
+  width: 100%;
+}
+
+.doctorInfoNameView {
+  display: flex;
+  flex-direction: row;
+  height: 40rpx;
+  text-align: center;
+  margin-left: 20rpx;
+  align-items: center;
+  margin-top: 25rpx;
+  width: 72%;
+}
+
+.reservationView {
+  display: flex;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 33px;
+  border: 1px solid #6a98d1;
+}
+
+.reservation {
+  color: #6a98d1;
+  line-height: 70rpx;
+  font-size: 36rpx;
+  padding: 5px;
+}
+
+.scrollView {
+  padding-bottom: 150rpx;
+  background: #f6f7f8;
+}
+
+.swiper-view {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  top: 100rpx;
+}
+
+.top-title {
+  width: 100%;
+  text-align: center;
+  flex-direction: row;
+  height: 8%;
+  display: flex;
+}
+
+.title-main-back {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  background: #f6f7f8;
+}
+
+.title-second-back {
+  width: 100%;
+  display: flex;
+  height: 66rpx;
+  justify-content: center;
+  background: white;
+  padding-top: 25rpx;
+}
+
+.tab-title {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 44%;
+  padding-bottom: 15rpx;
+  color: #777;
+}
+
+.on {
+  color: black;
+  border-bottom: 5rpx solid #f8c574;
+}
+
+.main-search-view {
+  display: flex;
+  flex-direction: row;
+  background: #f8f8f8;
+  align-content: center;
+  height: 55rpx;
+  margin-top: 34rpx;
+}
+
+.search-view {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30rpx;
+  background: #dadada;
+  align-items: center;
+  border-radius: 16rpx;
+  flex: 1;
+}
+
+.search-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 26rpx;
+}
+
+.search-input {
+  margin-left: 20rpx;
+  height: 30rpx;
+  text-align: left;
+  font-size: 14px;
+  flex: 1;
+}
+
+placeholder {
+  font-size: 14px;
+}
+
+.clear-bt {
+  color: black;
+  font-size: 33rpx;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  line-height: 55rpx;
+  text-align: center;
+}
+
+.filter-selection-back {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1;
+  margin-top: 3%;
+
+}
+
+.filter-selection {
+  background-color: #fff;
+  padding-bottom: 20rpx;
+}
+
+.specialTitle {
+  line-height: 39rpx;
+  font-size: 25rpx;
+  color: red;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  border-radius: 10rpx;
+  border: 1px solid transparent;
+  text-align: center;
+  margin-left: 10rpx;
+  display: flex;
+}
+
+.contactBt {
+  position: absolute;
+  right: 25rpx;
+  bottom: 36rpx;
+  width: 77rpx;
+  height: 77rpx;
+}
+.roundShape {
+  width: 6rpx;
+  height: 6rpx;
+  background: #95631b;
+  border-radius: 50rpx;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "会员商城",
+  "usingComponents": {
+    "goods": "plugin://yzGoodsPlugin/goods"
+  }
+}

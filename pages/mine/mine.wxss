@@ -1,0 +1,11 @@
+/* pages/mine/mine.wxss */
+.van-tabbar-item--active {
+color:#7d7e80 !important;
+}
+.van-tabbar{
+  padding:1em 0
+
+}
+.mine{
+  height:100vh;
+}

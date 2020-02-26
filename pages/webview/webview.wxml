@@ -1,0 +1,7 @@
+<!--pages/webview/webview.wxml-->
+<web-view style='margin-top:300rpx' src="{{src}}" wx:if="{{articleExitTag}}"> </web-view>
+<view class='articleMiss' wx:if=" {{articleMissTag}}">
+	<view class='topLine' />
+	<image src='../../images/article_no_icon.png' class='articleNoIcon' />
+	<text class='articleNoText'>内容不存在或者已被删除</text>
+	</view>

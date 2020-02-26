@@ -1,0 +1,62 @@
+<!--pages/set/set.wxml-->
+
+
+<block wx:for="{{data}}" wx:key="{{i}}">
+  <view class="setContainer">
+    <view class="setTitle">
+      {{item.packageName}}
+
+    </view>
+    <view class="endDate">有效期至{{item.zhEndTime}}</view>
+    <view class="heightLimit" style="max-height:{{height[0]}}">
+
+      <block wx:for="{{item.packageinfo}}" wx:key="{{i}}">
+        <view class="productContainer " style="max-height:{{height[1]}}">
+          <view class="productTitle">
+            <view class='container'>
+              <text class='font-bold'>{{item.name}}</text>
+              <view class="tokken">
+                <image src="../../images/flag.png" mode='widthFix' />
+                <view>
+                  <text>特权</text>
+                  <text>   （{{zh_number[index]}}）</text>
+                </view>
+              </view>
+              <text>共{{item.items.length}}个</text>
+            </view>
+          </view>
+          <block wx:for="{{item.items}}" wx:key="{{i}}">
+            <view class="infoContainer">
+              <view class="container">
+                <view>{{item.itmname}}</view>
+
+                <view wx:if="{{item.infinity==1}}">
+                  <text class="orange">不限次数</text>
+                </view>
+                <view wx:elif="{{item.discount>0}}">
+                  <text class="orange Big">{{item.discount}}</text>折
+                </view>
+                <view wx:elif="{{item.cont>0}}">
+                  剩
+                  <text class="orange Big">{{item.cont-item.useconut>=10?item.cont-item.useconut:"0"+(item.cont-item.useconut)}}</text>次
+                </view>
+                <view wx:else>
+                  <text class="orange Big"></text>
+                </view>
+              </view>
+              <view class="hr_scale-half " />
+            </view>
+
+          </block>
+        </view>
+
+      </block>
+
+    </view>
+    <view wx:if="{{item.need_collapse}}" class="tokken-btn" bindtap="collapse"> {{height[0]=="392px"?"查看所有特权":"收起展示条目"}} </view>
+    <view wx:else class="tokken-btn" bindtap="collapse"></view>
+  </view>
+
+
+
+</block>

@@ -1,0 +1,62 @@
+<!--pages/fileManagement/fileManagement.wxml  column-->
+<view class='window_view'>
+  <view wx:if="{{hasNoFileTag}}" class='prompt_no_data'>
+    <image src='../../images/prompt_back.png' class='prompt_icon' />
+    <text class='prompt_content_one'>完善自己信息后</text>
+    <text class='prompt_content_two'>可以创建自己的家庭档案</text>
+    <button class='add_file_bt' bindtap='createSelfFile'>完善信息</button>
+  </view>
+  <scroll-view wx:if="{{hasFileTag}}">
+    <view class='file_data_view'>
+      <view class="demo-block_title">
+        <text></text> 我的档案
+      </view>
+      <view class='thin_line' />
+      <view class='my_file_info_card'>
+        <image wx:if="{{selfFileInfo.sex=='F'}}" src='../../images/female.png' class='patient_icon' />
+        <image wx:if="{{selfFileInfo.sex=='M'}}" src='../../images/male.jpg' class='patient_icon' />
+        <view class='patient_info'>
+          <!-- 名字: 电话: 关系: -->
+          <text class='patient_info_name'>{{selfFileInfo.patientName}}</text>
+          <text class='patient_info_phone' wx:if="{{selfFileInfo.phoneNumberBusiness!=null}}">{{selfFileInfo.phoneNumberBusiness}}</text>
+          <text class='patient_info_type'>本人</text>
+          <view class='detail_bt_view'>
+            <button class='detail_bt' bindtap='myFileDetail'>查看</button>
+          </view>
+        </view>
+      </view>
+      <view class='line' />
+      <view wx:if="{{hasFamilyFileTag}}" style='margin-bottom:180rpx'>
+        <view class="demo-block_title">
+          <text></text> 家属档案
+        </view>
+        <view class='thin_line' />
+        <view class='family_file_info_view' catchtap='familyFileDetail' data-pid='{{item.pid}}' data-name='{{item.patientName}}' data-type='{{item.type}}' data-id='{{item.id}}' wx:for="{{familyFileArry}}" wx:for-index="position">
+          <view class='my_file_info_card'>
+            <image wx:if="{{item.sex=='F'}}" wx:key="this" src='../../images/female.png' class='patient_icon' />
+            <image wx:if="{{item.sex=='M'}}" wx:key="this" src='../../images/male.jpg' class='patient_icon' />
+            <view class='patient_info'>
+              <!-- 名字: 电话: 类型:-->
+              <text class='patient_info_name'>{{item.patientName}}</text>
+              <text class='patient_info_phone' wx:if="{{item.phoneNumberBusiness!=null}}">{{item.phoneNumberBusiness}}</text>
+              <text class='patient_info_type' wx:if="{{item.type=='2'}}" wx:key="this">父母</text>
+              <text class='patient_info_type' wx:if="{{item.type=='3'}}" wx:key="this">子女</text>
+              <text class='patient_info_type' wx:if="{{item.type=='4'}}" wx:key="this">其他</text>
+              <text class='patient_info_type' wx:if="{{item.type=='5'}}" wx:key="this">配偶</text>
+              <view class='detail_bt_view'>
+                <button class='detail_bt' bindtap='fileDetail'>查看</button>
+              </view>
+            </view>
+          </view>
+          <view class='thin_line' />
+        </view>
+      </view>
+      <view class='add_bt_view' wx:if="{{hideAddFamilyBt}}">
+        <button class='add_file_bt' bindtap='createFamilyFile'>添加家属</button>
+      </view>
+      <view class='bottom_bt_view' wx:if="{{bottomButtonShow}}">
+        <button class='add_file_bt' bindtap='createFamilyFile'>添加家属</button>
+      </view>
+    </view>
+  </scroll-view>
+</view>

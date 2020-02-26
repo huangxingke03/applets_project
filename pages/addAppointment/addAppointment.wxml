@@ -1,0 +1,136 @@
+<!--pages/addAppointment/addAppointment.wxml-->
+<view>
+	<van-dialog id="van-dialog" />
+	<van-toast id="van-toast" />
+	<view>
+		<form bindsubmit='appointmentSubmit' report-submit='true'>
+			<view class="top_back_view">
+				<image class='top_back_image' src='../../images/appointment_top_back.png' />
+				<view class="appointmentContainer">
+					<view class="showAppointmentTitle" style="margin-top:30rpx">{{titelString}}</view>
+					<view class="showAppointmentDoctorView">
+						<view class="showAppointmentDoctor">{{doctor.staffName}}医生</view>
+						<view class="showAppointmentTitle">{{diagnosticCategoryString}}</view>
+					</view>
+					<view class='showAppointmentDoctor' style="margin-left:30rpx;margin-top:30px">{{titelTimeString}}</view>
+				</view>
+			</view>
+			<view class='detailView'>
+				<view class='detailItem'>
+					<view class='background-color-white'>
+						<view class='tetilView margin-lr-32'>
+							<!-- <view class='line-F5C47C display-inline-block'></view> -->
+							<text class='text-28 display-inline-block flex-1'>就医信息</text>
+							<!-- <text class='doctorStatusText text-color-AEAEAE'>{{timeAndTypeString}}</text> -->
+							<text class='doctorStatusText' style='{{"color: "+ apponitment.sStatusObj.color}}'>{{apponitment.sStatusObj.text}}</text>
+						</view>
+					</view>
+					<!-- <view class='staffInfoItemOld'>
+            <view class='imgView'>
+              <image class='staffInfoImg' mode='aspectFill' src='{{doctor.avatar}}'></image>
+            </view>
+            <view class='infoView display-flex'>
+              <view class='flex-1'>
+                <view>
+                  <text class='docotorName font-size-20 inline-block'>{{doctor.staffName}} 医生</text>
+                </view>
+                <view>
+                  <text class='doctorStatusText text-color-5E5E5E'>中医/正骨按摩</text>
+                </view>
+                <view>
+                  <text class='doctorStatusText text-color-AEAEAE'>{{doctor.staffInfo}}</text>
+                </view>
+              </view>
+            </view> 
+            </view> -->
+            <view style="background-color:rgb(217, 218, 220);height:1px;margin-left:32rpx"/>
+					<view class='staffInfoItem'>
+						<view class='display_flex_row background-color-white'>
+							<view class='doctorImgView display-inline-block' bindtap='previewImg'>
+								<image class='doctorImg' mode='aspectFill' src='{{doctor.avatarUrl}}'>
+								</image>
+							</view>
+							<view class='doctor-info display-inline-block' bindtap='navtoDoctorInfo'>
+								<view class='display_flex_row'>
+									<text class='store-text-56-bold display_flex_1 overflow_hide height-80'>{{doctor.staffName}}</text>
+									<text wx:if="{{doctor.certificateDateOfYears > 0}}" class='years-text'>{{doctor.certificateDateOfYears}}年经验</text>
+								</view>
+								<view class='display_flex_row display_flex_1 margin-top-12'>
+									<text class='text-36'>{{doctor.physicianLevelText}}</text>
+									<text wx:if="{{doctor.physicianLevelText && doctor.physicianCategoryText}}">/</text>
+									<text class='text-36'>{{doctor.physicianCategoryText}}</text>
+								</view>
+								<view class='margin-tb-12 border-botom-f4941f'></view>
+								<view class='doctorInfoView'>
+									<text class='doctorInfoText'>{{doctor.staffInfo}}</text>
+								</view>
+							</view>
+						</view>
+					</view>
+           <view style="background-color:rgb(217, 218, 220);height:1px;margin-left:32rpx"/>
+				</view>
+			</view>
+			<!-- <view class='border-botom-gray background-color-white '>
+        <view class='tetilView margin-lr-32 position-relative display-flex '>
+          <view class='line-F5C47C display-inline-block'></view>
+          <text class='text-28 display-inline-block margin-l-2'>服务</text>
+          <text class='text-28 display_flex_end'>{{server.name}}</text>
+          <text class='right-arrow'></text>
+        </view>
+      </view> -->
+			<view style="margin-bottom: 3.6%;">
+				<view wx:if="{{mode === 2}}" class=' background-color-white '>
+					<view class='tetilView margin-lr-32 position-relative display-flex '>
+						<!-- <view class='line-F5C47C display-inline-block'></view> -->
+						<text class='text-28 display-inline-block margin-l-2'>预约人</text>
+						<text class='text-28 display_flex_end'>{{showPatientNameText}}</text>
+					</view>
+				</view>
+				<view wx:if="{{mode === 1}}" bindtap='changePatient' class='background-color-white '>
+					<picker class='color-white background-color-transparent submitHintText' bindchange='changePatient' name='id' value='{{patients[patientIndex].id}}' range='{{patients}}' mode='selector' range-key='patientNameText'>
+						<view class='tetilView margin-lr-32 position-relative display-flex '>
+							<!-- <view class='line-F5C47C display-inline-block'></view> -->
+							<text class='text-28 display-inline-block margin-l-2'>预约人</text>
+							<text class='text-28 display_flex_end margin-right-30'>{{patientNameText}}</text>
+							<text class='right-arrow'></text>
+						</view>
+					</picker>
+				</view>
+			</view>
+			<view class='detailItem'>
+				<view class=' background-color-white border-botom-gray'>
+					<view class='tetilView margin-lr-32 '>
+						<!-- <view class='line-F5C47C display-inline-block'></view> -->
+						<text class='text-28 display-inline-block margin-l-2'>留言</text>
+					</view>
+				</view>
+				<view class='{{"padding-tb-4"}} background-color-white '>
+					<view class='remark-view-box'>
+						<text class='remark-text' style='{{"border:"+(mode==1 ? "none;visibility:hidden;" : "min-height: 172rpx;visibility:block;")}}'>{{mode === 1 ? currentInput : apponitment.remark}}</text>
+						<textarea class='textarea-style' bindinput="getInput" wx:if="{{mode === 1}}" type='text' maxlength='232' name='remark' placeholder='点击输入留言'>
+            </textarea>
+					</view>
+				</view>
+			</view>
+			<view class='submitView'>
+				<view class="display-flex direction_row" wx:if="{{mode === 1 }}" style="width:100%">
+					<view class="appointmentTitle">请确认预约内容</view>
+					<button class='submitButton' form-type='submit'>提交预约</button>
+				</view>
+				<view class="display-flex direction_row" wx:if="{{mode === 2 && (apponitment.sStatus === 1 || apponitment.sStatus === 3)}}" style="width:100%">
+					<view class="appointmentTitle">请确认是否取消</view>
+					<button class='cancleButton' form-type='submit' bindtap='cancleAppointment'>取消预约</button>
+				</view>
+				<view style='{{(mode === 1 || (mode === 2 && (apponitment.sStatus === 1 || apponitment.sStatus === 3))) ? "margin-top: 0rpx;" : "margin-top: 100rpx;"}}'>
+				</view>
+			</view>
+			<!--  -->
+			<!-- <view class='submitView ' wx:if="{{mode === 1}}">
+        <picker class='color-white background-color-C6C6C6 text-32  submitHintText'  bindchange='changePatient' name='id' value='{{patients[patientIndex].id}}' range='{{patients}}' mode = 'selector' range-key='patientName'> 
+          <view class='picker-target'>为 {{patientNameText}} 预约（点击修改）</view>
+          </picker>
+        <button class=' text-52 background-color-EF8B20 color-white display-inline-block submitBtn'  form-type='submit'>提交预约</button>
+      </view> -->
+		</form>
+	</view>
+</view>

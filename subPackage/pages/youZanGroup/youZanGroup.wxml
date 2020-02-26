@@ -1,0 +1,2 @@
+<!--miniprogram/subpackage1/pages/youZanGroup/youZanGroup.wxml-->
+<groupon app-id="{{appId}}" shop-id="{{shopId}}" open-id="{{openId}}" size="{{2}}" extra-data="{{extraData}}"/>

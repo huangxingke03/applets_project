@@ -1,0 +1,7 @@
+<!--miniprogram/pages/index/indexloading.wxml-->
+<view class="loadingView">
+  <view class='loadingIconView'>
+    <image src='../../images/loading_icon.png' class='loadingIcon' />
+  </view>
+  <view class='loadingTitle'>正在加载..</view>
+</view>

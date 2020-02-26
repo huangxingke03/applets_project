@@ -1,0 +1,39 @@
+/* component/canclesurebt/canclesurebt.wxss */
+
+.main-bt-back {
+  display: flex;
+  flex-direction: row;
+  margin-top: 34rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+}
+
+.cancle-view {
+  background: #e5e5e5;
+  height: 55rpx;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+}
+
+.cancle-bt {
+  color: black;
+  font-size: 26rpx;
+}
+
+.sure-view {
+  background: linear-gradient(to right, #ec9b2f, #f9cb78);
+  height: 55rpx;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20rpx;
+}
+
+.sure-bt {
+  color: white;
+  font-size: 26rpx;
+}

@@ -1,0 +1,62 @@
+<!--pages/mine/mine.wxml-->
+
+<view class="card-container">
+     <view>
+          <button class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+          <view>
+               <view class="text1">
+                    ID:hehe
+               </view>
+
+          </view>
+     </view>
+     <view>
+          <text class="date">2020-12-31</text>
+     </view>
+</view>
+<demo-block>
+     <view class="demo-block van-clearfix">
+
+          <van-tabbar active-color="#000000" custom-class="tabbar" bind:change="onChange" safe-area-inset-bottom="{{ false }}">
+               <van-tabbar-item icon="shop">全部订单</van-tabbar-item>
+               <van-tabbar-item icon="chat">待收货</van-tabbar-item>
+               <!-- <van-tabbar-item icon="records">我的体检</van-tabbar-item> -->
+               <van-tabbar-item icon="gold-coin">待评价</van-tabbar-item>
+               <van-tabbar-item icon="gold-coin">退款/售后</van-tabbar-item>
+
+          </van-tabbar>
+     </view>
+</demo-block>
+
+<demo-block title="▍我的医疗">
+     <view class="demo-block van-clearfix">
+          <van-tabbar active-color="#000000"  active="{{ active2 }}" custom-class="tabbar" bind:change="onChange" safe-area-inset-bottom="{{ false }}">
+               <van-tabbar-item>
+                    <span>我的医生</span>
+                    <image slot="icon" src="{{ icon.normal }}" class="icon" mode="aspectFit" />
+                    <image slot="icon-active" src="{{ icon.active }}" mode="aspectFit" />
+               </van-tabbar-item>
+               <van-tabbar-item>
+                    <span>健康档案</span>
+                    <image slot="icon" src="{{ icon.normal }}" class="icon" mode="aspectFit" />
+                    <image slot="icon-active" src="{{ icon.active }}" mode="aspectFit" />
+               </van-tabbar-item>
+               <!-- <van-tabbar-item icon="chat">我的体检</van-tabbar-item> -->
+               <van-tabbar-item icon="records">我的服务</van-tabbar-item>
+          </van-tabbar>
+     </view>
+</demo-block>
+
+<demo-block title="▍常用工具">
+     <view class="demo-block van-clearfix">
+          <van-tabbar active-color="#000000" custom-class="tabbar" bind:change="onChange" safe-area-inset-bottom="{{ false }}">
+               <van-tabbar-item>
+                    <span>我的卡券</span>
+                    <image slot="icon" src="{{ icon.normal }}" class="icon" mode="aspectFit" />
+                    <image slot="icon-active" src="{{ icon.active }}" mode="aspectFit" />
+               </van-tabbar-item>
+               <van-tabbar-item icon="chat">邀请有奖</van-tabbar-item>
+               <van-tabbar-item icon="records">我的客服</van-tabbar-item>
+          </van-tabbar>
+     </view>
+</demo-block>

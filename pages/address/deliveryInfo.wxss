@@ -1,0 +1,261 @@
+/* pages/address/deliveryInfo.wxss */
+@import "/miniprogram_npm/vant-weapp/steps/index.wxss";
+
+.navi {
+  background-color: #f8c574;
+  color: #fff;
+  height: 400rpx;
+  margin-bottom: -180rpx;
+}
+
+page {
+  /* padding:0 12.5px; */
+  font-size: 26rpx;
+}
+
+page>view {
+  padding: 0 12.5px;
+  /* width: 100%; */
+}
+
+.title {
+  padding-bottom: 22rpx;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+
+.panel {
+  margin: 12.5px 0;
+  width: calc(100vw - 50px);
+  padding: 12.5px;
+  border-radius: 10rpx;
+}
+
+.flex-align {
+  display: flex;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.grayfont {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  line-height: 2;
+}
+
+.grayfont_title {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 28rpx;
+  display: flex;
+  width: 220rpx;
+}
+
+.grayfont_value {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 28rpx;
+  flex: 1;
+}
+
+.courier_company {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+}
+
+.use_address {
+  color: black;
+  font-size: 28rpx;
+  flex: 1;
+}
+
+.smallFont {
+  font-size: 24rpx;
+}
+
+.gray-50 {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.gray-80 {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.name_tel {
+  padding-top: 24rpx;
+}
+
+.text-right {
+  text-align: right;
+  min-width: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.van-step--vertical {
+  display: flex;
+}
+
+.van-step--vertical .van-step__active, .van-step--vertical .van-step__circle,
+.van-step--vertical .van-step__line {
+  position: absolute;
+  top: 19px;
+  left: 60px;
+}
+
+.van-steps--vertical .van-step__wrapper {
+  padding: 0 0 0 0px;
+}
+
+.user_name {
+  color: #fbc672;
+}
+
+.use_rule {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+
+.delivery_information_item {
+  background: white;
+  padding-bottom: 33rpx;
+  margin-bottom: 22rpx;
+  flex-direction: column;
+  display: flex;
+}
+
+.delivery_title {
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
+  padding-top: 20rpx;
+}
+
+.title_bottom_line {
+  margin-left: 20rpx;
+  height: 1rpx;
+  width: 100%;
+  background: #f3f3f3;
+  margin-top: 22rpx;
+}
+
+.delivery_information_detail {
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+
+.Self_lifting_title {
+  color: white;
+  border-radius: 10rpx;
+  background-color: #f8c574;
+  margin-left: 20rpx;
+  display: flex;
+  width: 140rpx;
+  height: 43rpx;
+  align-items: center;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  justify-content: center;
+}
+
+.not_Self_lifting {
+  color: #f8c574;
+  margin-left: 20rpx;
+  display: flex;
+  height: 43rpx;
+  align-items: center;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  justify-content: center;
+}
+
+.not_cancle_lifting {
+  color: red;
+  margin-left: 20rpx;
+  display: flex;
+  height: 43rpx;
+  align-items: center;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  justify-content: center;
+}
+
+.Self_lifting {
+  color: #6dc180;
+  margin-left: 20rpx;
+  display: flex;
+  height: 43rpx;
+  align-items: center;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  justify-content: center;
+}
+
+.bottom_line_view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 72rpx;
+}
+
+.bottom_line_left {
+  display: flex;
+  width: 60rpx;
+  background-color: #848484;
+  height: 2rpx;
+}
+
+.bottom_line_right {
+  display: flex;
+  width: 60rpx;
+  height: 2rpx;
+  background-color: #848484;
+  margin-left: 30rpx;
+}
+
+.delivery_info_item_first {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+  align-items: center;
+  margin-top: 15rpx;
+}
+
+.delivery_info_item_address {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+  margin-top: 15rpx;
+  margin-right: 20rpx;
+}
+
+.delivery_info_item {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+  align-items: center;
+  margin-right: 20rpx;
+  margin-top: 15rpx;
+}
+
+.receive_address {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.address_item {
+  display: flex;
+}

@@ -1,0 +1,99 @@
+/* pages/report/report.wxss */
+@import "/miniprogram_npm/vant-weapp/steps/index.wxss";
+@import "/miniprogram_npm/vant-weapp/icon/index.wxss";
+
+page{
+  padding: 25rpx 0 0 0;
+  font-size:28rpx;
+  /* line-height:1; */
+  overflow-x: hidden
+}
+
+.van-panel{
+  margin:25rpx;
+  width:calc(100vw - 50rpx) !important;
+  border-radius: 10px;
+
+}
+.gray-50{
+  color:rgba(0,0,0,0.5)
+}
+.gray-80{
+  color:rgba(0,0,0,0.8)
+}
+.dark-gold{
+  color:#896612
+}
+.gold-font{
+  color:#fec262
+}
+.smallFont{
+  font-size:24rpx;
+  padding-bottom:14rpx;
+}
+.title-prefix{
+  display: inline-block;
+  font-size: 1em;
+  background-color: #F8C574;
+  height: 1em;
+  margin-bottom:-4rpx;
+  border-radius:4px;
+  margin-right:14rpx;
+  width:6rpx
+}
+.prefix{
+  display:inline-block;padding-left:18rpx;
+  color:#c8b286
+}
+.rightview{
+  /* padding: 0 16rpx; */
+  display: flex;
+  align-items: center;
+  width: 83%;
+  padding:0 16rpx 0 8rpx 
+
+}
+.rightview>view{
+  width: 100%;
+}
+.flex{
+  display: flex;
+}
+.flex-center{
+  justify-content: center
+
+}
+.flex-align{
+  align-items: center
+}
+.title{
+  font-size: 40rpx;
+  line-height: 1;
+}
+.wrapper{
+  padding:30rpx
+}
+.van-steps {
+
+background-color:transparent;
+
+}
+.van-step--vertical {
+  display: flex;
+}
+.van-step--vertical .van-step__line {
+
+width:2px;
+height:100%;
+background-color:#fec262;
+
+}
+.van-step--vertical {
+line-height:18px;
+padding:10px 10px 50px 0;
+font-size:30rpx
+}
+.van-steps--vertical {
+  padding-left:40px;
+}
+

@@ -1,0 +1,20 @@
+.slide-image{
+  width:94vw;
+  height:calc(94vw / 61 * 20);
+  margin:0 3%;
+      /* box-shadow: 6px 6px 14px rgba(195, 190, 186, 1.000); */
+
+}
+swiper{
+  height:calc(94vw / 61 * 20/8*10);
+}
+
+.swiper-card-container {
+  /* background-color:orange;  */
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 6px 6px 14px rgba(195, 190, 186, 1.000);
+
+}

@@ -1,0 +1,15 @@
+<!--miniprogram/pages/editArticleShow/editArticleShow.wxml-->
+<view class='articleInfo' wx:if="{{articleExitTag}}">
+  <view class='topLine' />
+  <text class='articleTitle'>{{articleBean.title}}</text>
+  <view class='authorTime'>
+    <text class='articleAuthor'>{{articleBean.author}}</text>
+    <text class='articleCreateTime'>{{articleCreateTimeValue}}</text>
+  </view>
+  <rich-text class='articleContent' nodes="{{articleContentValue}}"></rich-text>
+</view>
+<view class='articleMiss' wx:if="{{articleMissTag}}">
+  <view class='topLine' />
+  <image src='../../images/article_no_icon.png' class='articleNoIcon' />
+  <text class='articleNoText'>内容不存在或者已被删除</text>
+</view>

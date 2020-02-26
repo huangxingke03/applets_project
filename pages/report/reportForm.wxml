@@ -1,0 +1,28 @@
+<!--pages/report/reportForm.wxml-->
+<demo-block>
+	<van-cell-group>
+		<van-field value="{{patientInfo.userName}}" placeholder="检测人" bindtap="toggleShow2" bind:blur="changeUsername" error-message="{{error.userName}}" icon="{{domain}}/file/wxapp-1556606606262-list_icon.png" readonly label="检测人">
+		</van-field>
+	</van-cell-group>
+	<van-cell-group>
+		<van-field value="{{gender[patientInfo.gender]}}" placeholder="性别" border="{{ false }}" readonly label="性别" />
+	</van-cell-group>
+	<van-cell-group>
+
+		<van-field value="{{ patientInfo.telNumber }}" placeholder="手机号码" label="手机号码" readonly="{{patientInfo.telNumber!=null}}" border="{{ false }}" error-message="{{error.telNumber}}" bind:blur="changeTelNumber" />
+	</van-cell-group>
+	<van-cell-group>
+
+		<van-field label="主诉" bind:focus="hideShow" value="{{ patientInfo.detailInfo }}" type="textarea" placeholder="{{placeholder}}" border="{{ false }}" bind:change="changeDetailInfo" error-message="{{error.detailInfo}}" size="large" input-class="textarea" autosize />
+	</van-cell-group>
+</demo-block>
+
+<view class="van-address-edit__buttons">
+	<button style='margin-top:60rpx' class="loginBtn" bindtap="submit" type="primary" size="primary" size="large">提交申请</button>
+	<!-- <van-button  bindtap="back" size="large" >取消</van-button> -->
+</view>
+
+<van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="hideShow" bind:select="onSelect" bind:cancel="hideShow" />
+
+
+<van-action-sheet show="{{ show2 }}" actions="{{ family }}" bind:close="hideShow2" bind:select="onSelect2" style="margin-bottom:{{isIphoneX?'36px':0}} " />

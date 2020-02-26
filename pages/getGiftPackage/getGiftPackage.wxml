@@ -1,0 +1,77 @@
+<!--miniprogram/pages/addGiftPackage/addGiftPackage.wxml-->
+<view class='window_view'>
+  <view wx:if="{{whether_loading}}" class='loading'>
+    <view class='loading_icon_view'>
+      <image src='../../images/icon-loading.png' class='loading_icon' />
+    </view>
+    <text class='loading_title'>正在使用优惠码，请稍候……</text>
+  </view>
+  <view wx:if="{{whether_success}}" class='success'>
+    <image src='../../images/load_success.png' class='success_icon' />
+    <text class='success_title'>已成功获得套餐</text>
+    <button class='backIndexBtn' bindtap='backIndex'>返 回 首 页</button>
+  </view>
+  <view wx:if="{{whether_failure}}" class='failure'>
+    <image src='../../images/load_failure.png' class='failure_icon' />
+    <text class='failure_title'>{{failureTitleValue}}</text>
+    <view wx:if="{{unknown_internet_error}}" class='unknown_internet_error_view'>
+      <view class='retryGetOtherBtn' bindtap='retryGet'>重\n试</view>
+      <view class='backIndexOtherBtn' bindtap='backIndex'>返 回 首 页</view>
+    </view>
+    <button wx:if="{{retry_receive_package}}" class='retryGetBtn' bindtap='retryReceivePackage'>重\n试</button>
+    <button wx:if="{{whether_back}}" class='backIndexBtn' bindtap='backIndex'>返 回 首 页</button>
+  </view>
+  <scroll-view wx:if="{{whether_show_package}}">
+    <view class='show_package'>
+      <block wx:for="{{data}}" wx:key="{{i}}">
+        <view class="setContainer">
+          <view class="setTitle">
+            {{item.packageName}}
+          </view>
+          <view class="heightLimit" style="max-height:{{height[0]}}">
+            <block wx:for="{{item.packageinfo}}" wx:key="{{i}}">
+              <view class="productContainer " style="max-height:{{height[1]}}">
+                <view class="productTitle">
+                  <view class='container'>
+                    <text class='font-bold'>{{item.name}}</text>
+                    <view class="tokken">
+                      <image src="../../images/flag.png" mode='widthFix' />
+                      <view>
+                        <text>特权</text>
+                        <text>   （{{zh_number[index]}}）</text>
+                      </view>
+                    </view>
+                    <text>共{{item.items.length}}个</text>
+                  </view>
+                </view>
+                <block wx:for="{{item.items}}" wx:key="{{i}}">
+                  <view class="infoContainer">
+                    <view class="container">
+                      <view>{{item.itmname}}</view>
+                      <view wx:if="{{item.infinity==1}}">
+                        <text class="orange">不限次数</text>
+                      </view>
+                      <view wx:elif="{{item.discount>0}}">
+                        <text class="orange Big">{{item.discount}}</text>折
+                      </view>
+                      <view wx:elif="{{item.cont>0}}">
+                        <text class="orange Big">{{item.cont}}</text>次
+                      </view>
+                      <view wx:else>
+                        <text class="orange Big"></text>
+                      </view>
+                    </view>
+                    <view class="hr_scale-half " />
+                  </view>
+                </block>
+              </view>
+            </block>
+          </view>
+          <view wx:if="{{item.need_collapse}}" class="tokken-btn" bindtap="collapse"> {{height[0]=="392px"?"查看所有特权":"收起展示条目"}} </view>
+          <view wx:else class="tokken-btn" bindtap="collapse"></view>
+        </view>
+      </block>
+      <button class='retryGetBtn' bindtap='receivePackage'>领取</button>
+    </view>
+  </scroll-view>
+</view>

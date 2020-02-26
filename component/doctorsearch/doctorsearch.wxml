@@ -1,0 +1,8 @@
+<!--component/doctorsearch/doctorsearch.wxml-->
+<view class='base-view' bindtap='itemEvent'>
+  <view class='search-view'>
+    <image class='search-icon' style="opacity:{{iconOpacity}}" src='../../images/search_icon.png' bindtap='seachEvent'></image>
+    <input class='search-input' placeholder="点击输入医生名字进行搜索" placeholder-class="placeholder" bindinput='getInputData' value='{{inoutValue}}' disabled='{{hasFocus}}'></input>
+  </view>
+  <text class='clear-bt' hidden='{{btShow}}' bindtap='clearEvent'>{{btTextValue}}</text>
+</view>

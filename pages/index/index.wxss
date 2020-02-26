@@ -1,0 +1,770 @@
+@import "../../component/tab/tab.wxss";
+
+/* @import "/schedule/schedule.wxss";
+@import "/mine/mine.wxss"; */
+
+button::after {
+  border: none;
+}
+
+/* swiper */
+
+swiper-item image {
+  border-radius: 0.4em;
+}
+
+/* swiper end */
+
+/* 医生列表 */
+
+.staffList {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.staffList>.navigator {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  text-align: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.staffList .button {
+  font-size: 16px;
+  width: 106.33px;
+  height: 21.33px;
+  line-height: 21.33px;
+  color: #A38554;
+  border-radius: 1em;
+  margin-top: 10rpx;
+}
+
+/* 广告板 */
+
+.ad-container {
+  padding: 0 15px 30px;
+  font-size: 16px;
+  background: #fff;
+}
+
+.ad-container .text1 {
+  line-height: 2.5;
+}
+
+.relative-view {
+  position: relative;
+}
+
+.relative-view image {
+  width: 100%;
+}
+
+.home_page {
+  margin-bottom: 50px;
+}
+
+.border-font {
+  display: inline-block;
+  border: 1px gainsboro solid;
+  font-size: 10px;
+  color: gainsboro;
+  padding: 0 0.5em;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-weight: bold;
+}
+
+.flex_entry {
+  display: flex;
+  justify-content: space-around;
+  font-size: 13px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.5;
+}
+
+/* 广告板end */
+
+/* 入口 */
+
+.flex_entry image {
+  width: 45px;
+  height: 45px;
+  border-radius: 0.2em;
+}
+
+/* 入口end */
+
+/*门店入口start */
+
+.map {
+  background: #fff;
+  display: flex;
+  /* margin: 17px auto; */
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.border-gray {
+  border: 2rpx solid #e1e1e1;
+}
+
+.map-content {
+  background: white;
+  width: calc(50% - 8rpx);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-grow: 2;
+}
+
+/* .map-content:nth-child(even) {
+  display: inline-flex;
+} */
+
+.map image {
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
+}
+
+.map .text-content {
+  padding: 0 0.4em 0.3em;
+  margin-top: -3px;
+}
+
+.text-inline-nowarper {
+  max-lines: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+}
+
+.appointmentTextView {
+  color: #000;
+  line-height: 1.4;
+  /* display: inline-flex;
+  flex-direction: row; */
+}
+
+.margin-left-7 {
+  margin-left: 7%;
+}
+
+.text-size-30 {
+  font-size: 30rpx;
+}
+
+.text-size-32 {
+  font-size: 32rpx;
+}
+
+.text-size-28-white {
+  font-size: 28rpx;
+  color: white;
+}
+
+.text-size-28-tip {
+  font-size: 28rpx;
+  color: #A7A7A8;
+}
+
+.text-size-33-white {
+  font-size: 33rpx;
+  color: white;
+}
+
+.text-size-36 {
+  font-size: 36rpx;
+}
+
+.text-size-28-black {
+  font-size: 28rpx;
+  color: black;
+}
+
+.text-size-25-gray {
+  font-size: 25rpx;
+  color: gray;
+}
+
+.text-size-22 {
+  font-size: 22rpx;
+}
+
+.text-color-d58a28 {
+  color: #d58a28;
+}
+
+.map .text1 {
+  font-size: 16px;
+  color: #000;
+  line-height: 1.4;
+}
+
+.text-18-bold {
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  line-height: 1.4;
+}
+
+.addressText {
+  /* width: 100%; */
+  height: 78rpx;
+  max-lines: 2;
+  overflow: hidden;
+}
+
+.map .text2 {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.8);
+  /* line-height:2; */
+  /* font-weight:bold; */
+  /* margin: 0 auto; */
+}
+
+/* news start */
+
+.news {
+  padding: 0 10px;
+}
+
+.flex_card {
+  padding: 10px 0px;
+  display: flex;
+  border-bottom: 1px solid gainsboro;
+}
+
+.news .image {
+  height: 77px;
+}
+
+.news image {
+  width: 100%;
+  height: 150rpx;
+}
+
+.news .text-content {
+  padding-left: 125px;
+  height: 72px;
+}
+
+.appointmentStatusText {
+  border-radius: 6rpx;
+  padding: 5rpx 15rpx;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: #936727;
+}
+
+.appointmentStatusText1 {
+  border: 2rpx solid;
+  border-radius: 6rpx;
+  padding: 0 10rpx;
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-right: 32rpx;
+}
+
+.display-flex-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.display-flex-column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  display: inline-flex;
+  flex: 1;
+  /* justify-content: flex-end; */
+}
+
+.news .text1 {
+  font-size: 25rpx;
+  line-height: 1.3;
+  margin: 15rpx;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.news .text2 {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 11px;
+  left: 136px;
+  width: 467rpx;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* news end */
+
+/* 预约 */
+
+.order {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 15rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  margin: 20px;
+  position: relative;
+}
+
+.border-bottom-view {
+  border-bottom: 2rpx solid rgb(217, 218, 220);
+  margin: 0 20rpx;
+}
+
+.display-flex-row .hr_scale-half_v {
+  padding: 2% 0;
+  margin: 1.5% 0;
+  border-left: 1px solid rgba(69, 90, 100, 0.6);
+  width: 2px;
+}
+
+.order-left-gray {
+  border-left: 1px solid rgba(69, 90, 100, 0.6);
+}
+
+.order .text2 {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.card-container {
+  width: calc(100vw - 25px);
+  height: calc((100vw - 25px) / 10 * 5);
+  margin: 15px auto;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  padding: 15.34px 0;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 6px 6px 14px rgba(195, 190, 186, 1.000);
+}
+
+.userinfo-avatar {
+  height: 52.33px;
+  width: 52.33px;
+  margin: 10px 13.4px 13.4px;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+  border: 1px solid #efe3d1;
+  overflow: hidden;
+}
+
+.userinfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 300ms ease;
+  position: relative;
+  padding-left: 28px;
+}
+
+.userinfo .primary {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 80px;
+  height: 28.5px;
+  margin-top: 10px;
+  font-size: 11.3333px;
+  display: flex;
+  align-items: center;
+  border-radius: 16px 0 0 16px;
+  background: #bf7e27;
+  justify-content: space-around;
+}
+
+.userinfo .primary .text-content {
+  z-index: 2;
+}
+
+.userinfo .primary text {
+  padding: 0 0 0 1em;
+  font-size: 11.4px;
+}
+
+.userinfo .text1 {
+  margin-left: 0rpx;
+  line-height: 1;
+  padding: 0 0.5em 11.4px 0.2em;
+  border-bottom: 1px dotted #efe3d1;
+  font-size: 11.4px;
+  display: inline-block;
+}
+
+.pin {
+  position: relative;
+  line-height: 26.3333px;
+  height: 26.3333px;
+  font-size: 15px;
+  color: black;
+}
+
+.pin-view {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 28px;
+}
+
+.pin text {
+  z-index: 3;
+  position: relative;
+}
+
+.pin .container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
+.pin .star {
+  height: 26.33333px;
+  width: 26.333333px;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  position: relative
+}
+
+.pin .bar {
+  margin-left: -26.3333px;
+  height: 18px;
+  width: calc(26.33px + 4em + 1.5em);
+  position: relative;
+  z-index: 2
+}
+
+.date {
+  padding-right: 22px;
+  font-size: 12px;
+  line-height: 26.3333px;
+  height: 26.3333px;
+  font-size: 15px;
+  color: black;
+  opacity: 0.8;
+}
+
+.demo-block-2 {
+  margin: 28rpx;
+  background-color: #f8f8f8;
+}
+
+.van-tabbar {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 30px !important;
+  flex-wrap: wrap;
+}
+
+.van-tabbar-item {
+  width: calc(100vw/4);
+}
+
+.small {
+  padding-bottom: 20px !important;
+}
+
+.big image {
+  width: 46.6666px !important;
+  height: 46.6666px !important;
+}
+
+.demo-block__title {
+  padding: 0 15px;
+  line-height: 3;
+  background: #fff;
+  font-size: 12px;
+  color: #000;
+}
+
+.hr {
+  width: 100vw;
+  border-bottom: 1rpx solid #efefef;
+}
+
+.hr_scale-half {
+  border-bottom: 1rpx solid #efefef;
+  transform: scaleY(0.5);
+  transform-origin: 50% 100%;
+  width: 100vw;
+}
+
+.demo-block__title text {
+  background: #f8c574;
+  transform: translateY(0.6em);
+  height: 24px;
+  width: 5.4px;
+  display: inline-block;
+  border-radius: 20%;
+  margin-right: 8px;
+}
+
+.quaterView {
+  width: 75vw !important;
+}
+
+.showMoreArticleBt {
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+}
+
+.nickNameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.nickName {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.integralContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  padding-left: 28px;
+}
+
+.integral {
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.integralTitle {
+  font-size: 15px;
+  color: black;
+  opacity: 0.8;
+}
+
+.couponView {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 28px;
+  margin-top: 10px;
+}
+
+.qrCodeView {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.qrCode {
+  width: 50px;
+  height: 20px;
+}
+
+.wealthContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.wealthItemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.verticalLine {
+  width: 1px;
+  background: gray;
+}
+
+.wealthItemTitle {
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.wealthItemValue {
+  color: #f8c575;
+  font-size: 26px;
+}
+
+.recharge_bt {
+  background: white;
+  display: flex;
+  color: black;
+  border: 1px solid black;
+  margin-top: 50rpx;
+  height: 30px;
+  justify-content: center;
+  width: 300rpx;
+  border-radius: 10em;
+  padding: 0 8px;
+  min-width: 60px;
+  font-size: 12px;
+  line-height: 28px;
+}
+
+.mainFunctionView {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 0 1rpx 1px #dfdfdf;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 18px 25px;
+}
+
+.secondFunctionView {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 0 1rpx 1px #dfdfdf;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 18px 25px;
+}
+
+.functionIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.functionView {
+  display: flex;
+  align-items: center;
+
+}
+
+.functionTitle {
+  font-size: 21px;
+  color: black;
+  background: transparent;
+}
+
+.horizontalLine {
+  height: 1px;
+  background: rgb(240, 228, 228);
+  margin: 15px 0px;
+}
+
+.arrowIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.staffInfoImg {
+  width: 35px;
+  height: 35px;
+  padding: 3px;
+  background: #4C301F;
+  border-radius: 50rpx;
+}
+
+.roundAppointmentPeople {
+  width: 6px;
+  height: 6px;
+  background: #90421D;
+  border-radius: 30px;
+}
+
+.roundAppointmentTime {
+  width: 6px;
+  height: 6px;
+  background: #428E5F;
+  border-radius: 30px;
+}
+
+.appointmentType {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  padding: 1px 0;
+  background: #EAF4FE;
+  color: #83A8DA;
+}
+
+.coverPhotoTipView {
+  position: absolute;
+  height: 234px;
+  z-index: 1;
+  background: #6C6B6E;
+  opacity: 0.5;
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
+  display: flex;
+  flex-direction: column;
+}
+
+.location-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.horizontalLineGray-1 {
+  height: 1rpx;
+  background: gray;
+}
+
+.horizontalLineGray-2 {
+  height: 2rpx;
+  background: gray;
+}
+
+.backWhite {
+  background: white;
+}
+
+.text-size-33-hot-doctor-title {
+  font-size: 33rpx;
+  color: #A38554;
+}
+
+.articlesCoverRound {
+  border-radius: 10rpx;
+}
+
+.articleAddTime {
+  font-size: 20rpx;
+}

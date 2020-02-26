@@ -1,0 +1,27 @@
+/* miniprogram/pages/index/indexloading.wxss */
+.loadingView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20rpx;
+  height: 100vh;
+  width: 100%;
+}
+
+.loadingTitle {
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.loadingIconView {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.loadingIcon {
+  width: 40rpx;
+  height: 40rpx;
+  animation: rotate 2s linear infinite;
+}
+

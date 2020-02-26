@@ -1,0 +1,23 @@
+/* pages/consultDoctor/consultDoctor.wxss */
+
+.imgView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.qrCodeImg1{
+  width: 92vw;
+  height: calc(90vw * 1.91);
+  padding: 2%;
+  /* padding-top: 70%;
+  padding-bottom: 2%; */
+  /* cacl(100vm * 1.88)px; */
+}
+.qrCodeImg{
+  width: 92vw;
+  height: 92vw;
+  padding: 2%;
+  /* padding-top: 70%;
+  padding-bottom: 2%; */
+  /* cacl(100vm * 1.88)px; */
+}

@@ -1,0 +1,48 @@
+<!--pages/doctorInfo/doctorInfo.wxml-->
+<!-- <text>pages/doctorInfo/doctorInfo.wxml</text> -->
+<view>
+  <view class='margin-32'>
+    <view wx:if="{{noDataShow}}" class='noDataView'>
+      <image class='noDataImg' src='../../images/prompt_back.png'></image>
+      <text class='text-size-36 margin-top-4'>{{noDataShowText}}</text>
+    </view>
+    <view class='flex-row' wx:if="{{!noDataShow}}">
+      <view class='line-F5C47C'></view>
+      <text class='nameText inline-block margin-l-2'>{{staff.staffName}}</text>
+      <text wx:if="{{staff.certificateDateOfYears > 0}}" class='years-text'>{{staff.certificateDateOfYears}}年经验</text>
+    </view>
+    <view class='flex-row'>
+      <text class='text-36 font-bold margin-l-035'>{{staff.physicianLevelText}}</text>
+      <text wx:if="{{staff.physicianLevelText && staff.physicianCategoryText}}" class='font-bold'>/</text>
+      <text class='text-36 font-bold'>{{staff.physicianCategoryText}}</text>
+    </view>
+    <view class='border-botom-f4941f' wx:if="{{!noDataShow}}"></view>
+    <view>
+      <text class='doctorInfoText'>{{staff.staffInfo}}</text>
+    </view>
+
+    <view wx:if="{{staff.qualificationCertificateNumber}}">
+      <view class='border-botom-gray '></view>
+      <view class='flex-row margin-t-20'>
+        <view class='line-F5C47C'></view>
+        <text class='text-36 font-bold inline-block margin-l-2'>资格证书编号</text>
+
+      </view>
+      <!-- <text class='display-block margin-t-6 text-36 margin-l-034'>{{staff.qualificationCertificateNumber}}</text> -->
+      <view class='margin-t-6 text-36 margin-l-034'>{{staff.qualificationCertificateNumber}}</view>
+    </view>
+
+    <view wx:if="{{staff.qualificationCertificateNumber && staff.certificateDateOfIssue}}">
+      <view class='border-botom-gray'></view>
+      <view class='flex-row '>
+        <view class='line-F5C47C'></view>
+        <text class='text-36 font-bold inline-block margin-l-2'>资格签发日期</text>
+      </view>
+      <view class='margin-t-6 text-36 margin-l-034'>{{staff.certificateDateOfIssueText}}</view>
+    </view>
+
+
+  </view>
+
+
+</view>

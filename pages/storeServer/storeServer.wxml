@@ -1,0 +1,164 @@
+<!--pages/storeServer/storeServer.wxml-->
+<!-- <text>pages/storeServer/storeServer.wxml</text> -->
+<view>
+  <view>
+    <view wx:if="{{noDataShow}}" class='noDataView'>
+      <image class='noDataImg' src='../../images/prompt_back.png'></image>
+      <text class='text-size-36 margin-top-4'>暂无数据</text>
+    </view>
+    <view wx:if="{{baseInfo}}" class='contextView margin-top-32'>
+      <view class='flex-row'>
+        <view class='line-F5C47C'></view>
+        <text class='text-bold-40 inline-block margin-l-2'>基础信息</text>
+      </view>
+      <view class='flex-row margin-top-20 bacground-white padding-top-bottom-20'>
+        <view class='baseInfoView'>
+          <text class='text-9e-30'>机构类型</text>
+          <text class='text-36 padding-top-12'>{{baseInfo.organiztionType ? baseInfo.organiztionType : "--"}}</text>
+        </view>
+        <view class='line'></view>
+        <view class='baseInfoView'>
+          <text class='text-9e-30 '>面积</text>
+          <text class='text-36 padding-top-12'>{{baseInfo.floorArea ? baseInfo.floorArea : "--"}}</text>
+        </view>
+        <view class='line'></view>
+        <view class='baseInfoView'>
+          <text class='text-9e-30 '>成立时间</text>
+          <text class='text-36 padding-top-12'>{{baseInfo.formed ? baseInfo.formed : "--"}}</text>
+        </view>
+      </view>
+      <view class='padding-top-bottom-20 display-flex'>
+        <text class='serverTitle text-36 width-27'>工作日：</text>
+        <view class='display-inline-flex width-73'>
+          <text wx:if="{{baseInfo.officeHours}}" class='text-36'>{{baseInfo.officeDays ? baseInfo.officeDays : "--"}}</text>
+          <text class='text-36 margin-left-10'>{{officeDays}}</text>
+        </view>
+      </view>
+      <view class='padding-top-bottom-20 display-flex'>
+        <text class='serverTitle text-36 width-27'>营业时间：</text>
+        <view class='display-inline-flex width-73'>
+          <text wx:if="{{baseInfo.officeHours}}" class='text-36'>{{baseInfo.officeHours ? baseInfo.officeHours : "--"}}</text>
+          <text class='text-36 margin-left-10'>{{storeServerData.startTime ? storeServerData.startTime : "-"}}-{{storeServerData.endTime ? storeServerData.endTime : "-"}}</text>
+        </view>
+
+      </view>
+      <view class='border-botom-gray margin-top-32 '></view>
+    </view>
+  </view>
+  <view wx:if="{{medicalQualification.length > 0}}" class='contextView margin-top-32'>
+    <!-- <text class='text-bold-40'>医疗资质</text> -->
+    <view class='flex-row'>
+      <view class='line-F5C47C'></view>
+      <text class='text-bold-40 inline-block margin-l-2'>医疗资质</text>
+    </view>
+    <scroll-view class='margin-bottom-22 border-botom-gray' scroll-x>
+      <view class='medicalQualificationView'>
+        <block wx:for="{{medicalQualification}}" wx:key="{{i}}">
+          <view bindtap='previewImg' data-selectItem="{{item}}" class='img-text-itemView'>
+            <image src='{{item.path}}' mode='aspectFit'></image>
+            <text class='text-9e-30 margin-bottom-22'>{{item.name}}</text>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+
+    <!-- <view class='border-botom-gray margin-top-32 '></view> -->
+
+  </view>
+  <view wx:if="{{chineseMedicineService.length > 0}}" class='contextView margin-top-32'>
+    <!-- <text class='text-bold-40'>中医服务</text> -->
+    <view class='flex-row'>
+      <view class='line-F5C47C'></view>
+      <text class='text-bold-40 inline-block margin-l-2'>中医服务</text>
+    </view>
+    <view>
+      <block wx:for="{{chineseMedicineService}}" wx:key="{{i}}">
+        <view class='padding-top-bottom-20 display-flex'>
+          <text class='serverTitle text-36 width-27'>{{item.name}}</text>
+          <text class='text-36 width-73'>{{item.serviceInfo}}</text>
+        </view>
+      </block>
+    </view>
+    <!-- <view class='padding-top-bottom-20 display-flex'> 
+      <text class='serverTitle text-36 width-27'>门诊科室：</text>
+      <text class='text-36 width-73'>中医内科、中医外科、中医妇科、中医骨科、中医儿科、中医康复科、中医肿瘤科、中医针灸科</text>
+    </view> -->
+    <view class='border-botom-gray margin-top-32 '></view>
+  </view>
+
+  <view wx:if="{{specialMedical.length > 0}}" class='contextView margin-top-32'>
+    <!-- <text class='text-bold-40'>医疗特色</text> -->
+    <view class='flex-row'>
+      <view class='line-F5C47C'></view>
+      <text class='text-bold-40 inline-block margin-l-2'>医疗特色</text>
+    </view>
+    <view class='box-boder-view'>
+      <block wx:for="{{specialMedical}}" wx:key="{{i}}">
+        <text>{{item}}</text>
+      </block>
+      <!-- <text>医保定点</text>
+      <text>一人一方</text>
+      <text>执证医生理疗</text>
+      <text>药剂师抓药</text> -->
+    </view>
+    <view class='border-botom-gray margin-top-32 padding-top-12'></view>
+  </view>
+
+  <view wx:if="{{peripheralTrafficAndBusinessArea.length > 0}}" class='contextView margin-top-32'>
+    <view class='flex-row'>
+      <view class='line-F5C47C'></view>
+      <text class='text-bold-40 inline-block margin-l-2'>周边交通及商圈</text>
+    </view>
+    <!-- <text class='text-bold-40'>周边交通及商圈</text> -->
+    <block wx:for="{{peripheralTrafficAndBusinessArea}}" wx:key="{{i}}">
+      <view class='tBView' bindtap='gotoDestination' data-mDestination="{{item}}">
+        <view class='tag-view'>
+          <text class='boder-text text-32'>{{item.typeName}}</text>
+        </view>
+        <text class='flex-1-text text-32'>{{item.destination}}</text>
+        <text class='text-9e-30 margin-right-28'>{{item.distance}}</text>
+        <view class='right-arrow '></view>
+      </view>
+
+    </block>
+    <!-- <view class='tBView'>
+      <view class='tag-view'>
+        <text class='boder-text text-32'>地铁站</text>
+      </view>
+      <text class='flex-1-text text-32'>10号线五角场地铁站</text>
+      <text class='text-9e-30'>790m</text>
+    </view>
+
+    <view class='tBView'>
+      <view class='tag-view'>
+        <text class='boder-text text-32'>停车场</text>
+      </view>
+      <text class='flex-1-text text-32'>海上财智商务中心广场停车场</text>
+      <text class='text-9e-30'>50m</text>
+    </view>
+    <view class='tBView'>
+      <view class='tag-view'>
+        <text class='boder-text text-32'>商场</text>
+      </view>
+      <text class='flex-1-text text-32'>九隆坊</text>
+      <text class='text-9e-30'>170m</text>
+    </view> -->
+
+    <view class='border-botom-gray margin-top-32 '></view>
+  </view>
+
+  <view wx:if="{{infrastructure.length > 0}}" class='contextView margin-top-32 margin-bottom-100'>
+    <!-- <text class='text-bold-40'>基础设施</text> -->
+    <view class='flex-row'>
+      <view class='line-F5C47C'></view>
+      <text class='text-bold-40 inline-block margin-l-2'>基础设施</text>
+    </view>
+    <view class='box-boder-view'>
+      <block wx:for="{{infrastructure}}" wx:key="{{i}}">
+        <text>{{item}}</text>
+      </block>
+    </view>
+    <view class='border-botom-gray margin-top-32 padding-top-12'></view>
+  </view>
+
+</view>

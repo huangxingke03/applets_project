@@ -1,0 +1,93 @@
+/* pages/auth/auth.wxss */
+
+Page {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  
+}
+.title {
+     font-size: 35rpx;
+     color: #020202;
+     /* margin-left: 20rpx; */
+}
+.loginView {
+  background-color: white;
+  padding-top: 22%;
+  padding-bottom: 7% ; 
+  /* margin: 20% 12% 0 12%;  */
+  border-radius: 12rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.transformView{
+  position: absolute;
+  width: 100%;
+  height: 140rpx;
+  background-color: #fcecd2;
+  -moz-border-radius: 240px / 36px;
+  -webkit-border-radius: 240px / 36px;
+  border-radius: 248px / 36px;
+}
+.title {
+  width: 100%;
+  height: 50rpx;
+  font-size: 52rpx;
+  position: absolute;
+  background-color: #fcecd2;
+  border-radius: 12rpx 12rpx 0rpx 0rpx;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  
+}
+.titleText {
+  width: 100%;
+  height: 100%;
+  color: #F8C575;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+}
+
+.logoImg {
+  width: 320rpx;
+  height: 320rpx;
+  margin-top: 25%;
+}
+.protocol {
+  font-size: 26rpx;
+  letter-spacing: 2rpx;
+  color: #555657;
+  margin: 20% 0 3% 0;
+}
+.color-EF9322 {
+  color: #EF9322;
+}
+
+.feedBack {
+  font-size: 40rpx;
+  color: #555657;
+}
+
+/* .border {
+  border-bottom: 2rpx solid #555657;
+  transform: translateY(-420%) ;
+} */
+
+
+.companyName{
+  font-size: 30rpx;
+  color: #555657;
+  text-decoration: underline;
+}
+
+
+
+

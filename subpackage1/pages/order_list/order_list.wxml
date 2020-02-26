@@ -1,0 +1,4 @@
+<!--miniprogram/subPackage/pages/order_list/order_list.wxml-->
+<view
+class='loading_text'
+><text>正在加载订单</text></view>

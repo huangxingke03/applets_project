@@ -1,0 +1,42 @@
+<!--pages/auth/auth.wxml-->
+<van-toast id="van-toast" />
+<view>
+  <!-- <van-dialog
+    async-close
+    show="true"
+    bind:close="onClose"
+    confirm-button-open-type="getUserInfo"
+    bind:getuserinfo="doLogin"
+    message="您还没有登录 请点击确定登录"
+  >  
+  </van-dialog>-->
+  <view>
+    <view class='loginView'>
+      <view class='title'>
+        <view class='transformView'>
+          <text class='titleText'>小优家庭医生</text>
+        </view>
+      </view>
+      <image class='logoImg' src='../../images/logo.png'></image>
+      <view class='protocol' bindtap='navToProtocol'>
+        <text>点击立即登录同意</text>
+        <navigator style="display:inline-block" url='/pages/protocol/protocol'>
+          <text class='color-EF9322'>《小优家庭医生用户协议》</text>
+        </navigator>
+      </view>
+
+      <button open-type="getUserInfo" class='loginBtn' bindgetuserinfo="doLogin">立即登录</button>
+      <view bindtap='navToFeedBack'>
+        <text class='companyName'>中优堂（上海）医疗管理有限公司</text>
+        <!-- <view class='border'></view> -->
+      </view>
+
+      <view bindtap='navToFeedBack'>
+        <text class='companyName'>上海中和堂门诊部有限公司</text>
+        <!-- <view class='border'></view> -->
+      </view>
+
+
+    </view>
+  </view>
+</view>

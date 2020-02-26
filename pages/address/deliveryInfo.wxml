@@ -1,0 +1,149 @@
+<!--pages/address/deliveryInfo.wxml-->
+<view class="navi">
+</view>
+<view>
+  <van-panel custom-class="panel">
+    <view slot="header" class="title">
+      <text class="title_prefix"></text> 订单详情</view>
+    <view class="flex-align">
+      <view style='width:140rpx;padding-bottom:12rpx;margin-bottom:-11rpx'>
+        <image wx:if="{{data.deliveryGoodsType>0}}" src="../../images/deliveryGoodsType/{{data.deliveryGoodsType}}.jpg" mode="widthFix" style='width:80rpx;margin-left:0.5em'></image>
+      </view>
+      <view style='padding-bottom:22rpx'>
+        <view style='padding:12rpx 0;font-weight:bold'>{{getDeliGoodTypeObj[data.deliveryGoodsType]}}</view>
+        <view class='user_name' wx:if="{{data.pname&&data.pname!=''}}">使用人：{{data.pname}}</view>
+      </view>
+    </view>
+    <view class="van-hairline--bottom"></view>
+    <view class='use_rule' wx:if="{{data.itemRemarks}}">
+      <view slot="header" class="title">
+        <text class="title_prefix"></text> 使用说明</view>
+      <view class="grayfont">{{data.itemRemarks||""}}</view>
+    </view>
+  </van-panel>
+</view>
+<!-- 物流配送信息 -->
+<view class='delivery_information_item' wx:if="{{data.logisticsCategory==1||data.logisticsCategory==2}}">
+  <view class="delivery_title">
+    <view class="flex-align" style='margin-right:30rpx'>
+      <image src="../../images/delivery.png" mode="widthFix" style='width:50rpx;'></image>
+    </view> 配送信息</view>
+  <view class="title_bottom_line"></view>
+  <view class='delivery_info_item_first'>
+    <view class='grayfont_title'>
+      配送编号：
+    </view>
+    <view class='grayfont_value'>
+      {{data.orderNumber||""}}
+    </view>
+  </view>
+  <view class='delivery_info_item'>
+    <view class='grayfont_title'>
+      配送时间：
+    </view>
+    <view class='grayfont_value'>
+      {{data.createdAt}}
+    </view>
+  </view>
+  <view class='delivery_info_item'>
+    <view class='grayfont_title'>
+      配送快递公司：
+    </view>
+    <view class='courier_company'>
+      <view class="flex-align" style='margin-right:30rpx'>
+        <image src="../../images/down_wind_icon.png" mode="widthFix" style='width:40rpx;height:40rpx'></image>
+      </view>
+      {{getAllDelivery[data.logisticsCompanyNumber]}}
+    </view>
+  </view>
+  <view class='delivery_info_item'>
+    <view class='grayfont_title'>
+      收货人姓名：
+    </view>
+    <view class='grayfont_value'>
+      {{data.addresseeName||""}}
+    </view>
+  </view>
+  <view class='delivery_info_item'>
+    <view class='grayfont_title'>
+      收货人电话：
+    </view>
+    <view class='grayfont_value'>
+      {{data.addresseeMobile||""}}
+    </view>
+  </view>
+  <view class='delivery_info_item_address'>
+    <view class='grayfont_title'>
+      收货地址：
+    </view>
+    <view class='use_address'>
+      {{data.addresseeCountry+' '+data.addresseeProvince+' '+data.addresseeCity+' '+data.addresseeArea+' '+data.addresseeAddress}}
+    </view>
+  </view>
+</view>
+<!-- 自提配送信息 -->
+<view class='delivery_information_item' wx:if="{{data.logisticsCategory==3||data.logisticsCategory==4}}">
+  <view style='display:flex;flex-direction:row;align-items:center;'>
+    <view class="delivery_title">
+      <view class="flex-align" style='margin-right:30rpx'>
+        <image src="../../images/delivery.png" mode="widthFix" style='width:50rpx;'></image>
+      </view> 配送信息</view>
+    <view class='Self_lifting_title'>用户自提</view>
+  </view>
+  <view class="title_bottom_line"></view>
+  <view class='delivery_info_item_first'>
+    <view class='grayfont_title'>
+      自提联系人：
+    </view>
+    <view class='grayfont_value'>
+      {{data.selfMentionName||""}}
+    </view>
+  </view>
+  <view class='delivery_info_item'>
+    <view class='grayfont_title'>
+      联系人电话：
+    </view>
+    <view class='grayfont_value'>
+      {{data.selfMentionNumber||""}}
+    </view>
+  </view>
+  <view class='delivery_info_item_address'>
+    <view class='grayfont_title'>
+      自提地址：
+    </view>
+    <view class='use_address' bindtap='movetoLocation'>
+      {{selfRaisingAddress}}
+    </view>
+  </view>
+  <view class="title_bottom_line"></view>
+  <view class='not_Self_lifting' wx:if="{{data.state==1}}">尚未自提</view>
+  <view class='Self_lifting' wx:elif="{{data.state==2}}">已自提</view>
+   <view class='not_cancle_lifting' wx:elif="{{data.state==3}}">已取消</view>
+</view>
+<view class='bottom_line_view' wx:if="{{data.logisticsCategory==3||data.logisticsCategory==4}}">
+  <view class='bottom_line_left' />
+  <view style='font-size:26rpx;margin-left:30rpx;color:#A0A0A0'>已经到底了</view>
+  <view class='bottom_line_right' />
+</view>
+<view style="width:calc( 100vw - 50rpx )">
+  <view class="custom-class van-steps van-steps--{{ direction }}">
+    <view class="van-step__wrapper">
+      <view wx:for="{{ steps }}" wx:key="index" class="van-step van-hairline van-step--{{ direction }} {{ item.status ? 'van-step--' + item.status : '' }}" style="{{ width ? 'width:' + width + 'px' : '' }}">
+        <view class="van-step__title text-right" style="{{ index === active ? 'color: ' + activeColor : '' }}">
+          <view>{{item.acday}}</view>
+          <view class="smallFont">{{item.actime}}</view>
+        </view>
+        <view class="van-step__title" style="width:75%; margin-left:40px;{{ index === active ? 'color: ' + activeColor : '' }} ">
+          <view>{{ item.text }}</view>
+          <view class="smallFont">{{ item.desc }}</view>
+        </view>
+        <view class="van-step__circle-container">
+          <view class="van-step__circle" wx:if="{{ index!== active  }}" style='background:#367DF5;border-radius:500px;width:20px;height:20px;text-align:center;font-size:10px;color:white'>收</view>
+          <van-icon wx:else name="checked" color="{{ activeColor }}" size="20px" custom-class="van-step__active" />
+        </view>
+        <view wx:if="{{ index !== steps.length - 1 }}" class="van-step__line"></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{isIphoneX}}" style="padding-bottom:36px"></view>

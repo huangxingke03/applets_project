@@ -1,0 +1,9 @@
+<!--pages/auth/authPhone.wxml-->
+<image src='../../images/authPhone.jpg' style='width:100%;position:absoulute' />
+
+<text style='line-height:2;font-size:15px;'>欢迎使用小优家庭医生！</text>
+
+<text style='line-height:2;font-size:15px;margin-left:1em;margin-right:1em;margin-bottom:1em;'>为了更好地为您服务，我们希望得到您的联系方式，同时将赠与您安心服务套餐。
+</text>
+<button open-type="getPhoneNumber" class='loginBtn' bindgetphonenumber="doLogin">授权并领取权益</button>
+<button  class='cancelBtn' bindtap='cancel'>取消</button>

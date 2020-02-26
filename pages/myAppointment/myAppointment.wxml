@@ -1,0 +1,56 @@
+<!--pages/myAppointment.wxml-->
+<!-- d="#F8C574" -->
+<view class='window_view'>
+  <van-toast id="van-toast" />
+  <view class='vanTabsView'>
+    <van-tabs bind:click="changeTab" active="{{currentTab}}" swipeable sticky scroll-top="{{scrollTop}}" animated type="line" color="#F8C574">
+      <van-tab title="{{tabs[0]}}" />
+      <van-tab title="{{tabs[1]}}" />
+    </van-tabs>
+  </view>
+
+  <swiper current="{{currentTab}}" style="height: {{winHeight?winHeight+'px':'auto'}}" class='swiper' duration="200" bindchange="swiperchange">
+    <block wx:for="{{tabs}}" wx:key="{i}">
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" style="height: {{winHeight?winHeight+'px':'auto'}}">
+          <!-- bindscrolltolower="scrollbot" -->
+          <view class='item-record-info '>
+            <block wx:for="{{currentTab === 0 ? apponitmentsNotComplete : appointmentsCompleted}}" wx:key="{{i}}" wx:for-index="index">
+              <view bindtap='navigateToAppointDetail' class='item-view' data-apponitment='{{item}}'>
+                <view class='title-view '>
+                  <text class='title padding-20-25 dispaly-inline-block'>{{item.patientName}} 的预约</text>
+                  <!-- <text class='title padding-20-25 flex-1' style='{{"color: "+ (item.sStatus === 1 ? "#9d6212" : item.sStatus === 2 || item.sStatus === 4 ? "#9c3b0e": item.sStatus === 3 || item.sStatus === 5 ? "#24aa70" :"#24aa70")}}'>{{item.sStatus === 1 ? '待确认' : item.sStatus === 2 ? '已取消' : item.sStatus === 3 ? '已确认': item.sStatus === 4 ? '未确认':'已完成' }} </text> -->
+                  <text class='title padding-20-25 flex-1' style='{{"color: "+ (item.sStatusObj.color)}}'>{{item.sStatusObj.text}} </text>
+                </view>
+                <view class='item-view-info '>
+                  <view class='padding-25-0'>
+                    <text>预约事项：</text>
+                    <text>{{item.staffName}} 医生进行 中医体检</text>
+                  </view>
+                  <view class='border-botom-gray'></view>
+                  <view class='padding-25-0'>
+                    <text>预约时间：</text>
+                    <text>{{item.startDateString}}</text>
+                  </view>
+                  <!-- <view class='border-botom-gray'></view>
+              <view class='padding-25-0'>
+                <text>预约地点：</text>
+                <text>{{item.patientAddress ? item.patientAddress : '上海市XXX路XXX号'}}</text>
+              </view> -->
+                </view>
+              </view>
+            </block>
+            <!-- <view wx:if="{{currentTab === 0 ? apponitmentsNotComplete.length === 0: appointmentsCompleted.length === 0}}" class='noDataView'> -->
+            <view wx:if="{{currentTab === 0 ? noDataShow1 : noDataShow2}}" class='noReservationView'>
+              <image class='noDataImg' src='../../images/prompt_back.png'></image>
+              <text class='text-size-36 margin-top-4'>暂无预约数据</text>
+              <text wx:if="{{currentTab === 0}}" class='text-size-36'>可前往新增预约</text>
+              <text wx:if="{{currentTab === 0}}" class='submitBtn text-size-36 addAppointment margin-top-6' bindtap='navToSelectDoctor'>新增预约</text>
+            </view>
+          </view>
+          <view wx:if="{{currentTab === 0 ? dataAllLoaded1 : dataAllLoaded2}}" class='dataAllLoaded'>--没有更多了--</view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

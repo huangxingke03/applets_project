@@ -1,0 +1,10 @@
+<zan-account
+  open-id="{{ openId }}"
+  shop-id="{{ shopId }}"
+  app-id="{{ appId }}"
+  show-login="{{ true }}"
+  show-toast="{{ false }}"
+  bind:success="handleSuccess"
+  bind:fail="handleFail"
+  bind:captcha-fail="handleCaptchaFail"
+/>

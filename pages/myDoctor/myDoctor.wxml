@@ -1,0 +1,43 @@
+<!--pages/myDoctor/myDoctor.wxml-->
+<!-- <text>pages/myDoctor/myDoctor.wxml</text> -->
+<view>
+  <!-- <view wx:if="{{staffInfos.length === 0}}" class='noDataView'> -->
+  <view wx:if="{{noDataShow}}" class='noDataView'>
+    <image class='noDataImg' src='../../images/prompt_back.png'></image>
+    <text class='text-size-36 margin-top-4'>暂无数据</text>
+  </view>
+  <view class='staffInfoPage'>
+    <block wx:for="{{staffInfos}}" wx:key="{{i}}">
+      <view class='staffInfoItem'>
+        <view class='imgView'>
+          <image class='staffInfoImg' mode='aspectFill' src='{{item.avatarUrl}}'></image>
+        </view>
+        <view class='infoView display-flex flex-direction-column'>
+          <view class='flex-1'>
+            <view>
+              <text class='docotorName font-size-20 inline-block'>{{item[titelKey]}}</text>
+            </view>
+            <view class=' title'>
+              <text>中医</text>
+              <text class='jonTitle' wx:if="{{item.jobTitle}}">{{item.jobTitle}}</text>
+            </view>
+            <!-- <view>
+              <text class='doctorInfoText'>{{item.staffInfo}}</text>
+            </view> -->
+            <view class='display-flex-1-padd-10'>
+              <text class='text-36'>{{doctor.physicianLevelText}}</text>
+              <text wx:if="{{doctor.physicianLevelText && doctor.physicianCategoryText}}">/</text>
+              <text class='text-36'>{{doctor.physicianCategoryText}}</text>
+            </view>
+          </view>
+          <view class='btnsView'>
+            <view class='width-50'></view>
+            <!-- <button class='consultBtn inline-block font-size-18' style='background-color: {{color1}}' bindtap='gotoConsultDoctor' data-doctor='{{item}}'>咨询</button> -->
+            <button class='oppointmentBtn inline-block font-size-18' style='background-color: {{color2}}' bindtap='gotoOppointmentDoctor' data-doctor='{{item}}'>预约</button>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{dataAllLoaded}}" class='dataAllLoaded'>--没有更多了--</view>
+</view>

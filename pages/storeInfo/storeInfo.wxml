@@ -1,0 +1,78 @@
+<!--pages/storeInfo/storeInfo.wxml-->
+
+
+<view>
+	<view clss='storeInfoPage'>
+		<!-- <view class='storeImgView'>
+      <image class='storeImg' mode='aspectFill' src='{{storeImgUrl}}'>
+      </image>
+    </view>-->
+		<view class='swiperView'>
+			<swiper class='storeSwiper' bindtap='previewImg' current='{{currentImgIndex}}' bindchange='swiperchange' indicator-dots="{{storeImgUrls}}" autoplay="{{autoplay}}" circular interval="{{interval}}" duration="{{duration}}">
+				<block wx:for="{{storeImgUrls}}" wx:key="{{i}}">
+					<swiper-item data-imgurl="{{item}}">
+						<image src="{{item}}" mode='aspectFill' class="slide-image" />
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
+		<view>
+			<view class='display_flex space_between border-botom-gray align_center' style="height:65px;margin-left:15px">
+				<view class="storeTitle">
+					<image class='store-icon' src='/images/store_new.png' mode='widthFix'></image>
+					<text class='store-text-18-bold display_flex_1 overflow_hide max_line_1 '>{{name}}</text>
+				</view>
+				<view class="moreView" bindtap='gotoStoreServer'>
+					<view class='store-server-type'>
+						<text>查看更多</text>
+					</view>
+					<view class='top_right-arrow' />
+				</view>
+				<!-- <van-rate class='display_flex_end margin_left_10' value="{{score}}" size="{{18}}" disabled disabled-color='#ffd21e' /> -->
+				<!-- <text style='font-size:18px'>⭐ ⭐ ⭐ ⭐ ⭐</text> -->
+			</view>
+			<view class='display_flex space_between align_center border-botom-gray' style="height:75px;margin-left:15px">
+				<view class="direction_column display_flex">
+					<view class='display_flex direction_row align_center'>
+						<text class='store-status store-text-36'>{{storeStatus}}</text>
+						<view class='store-border-left' />
+						<text class='store-business-hours'>{{startTime}}</text>
+						<view class="horizontalLine" />
+						<text class='store-business-hours'>{{endTime}}</text>
+					</view>
+					<view class='display_flex_1 margin-top-10'>
+						<!-- <text >电话：</text> -->
+						<text class='store-status store-business-hours'>{{contactNumber}}</text>
+					</view>
+				</view>
+				<image class='store-icon' src='/images/phone_new.png' mode='widthFix' bindtap='contactStore' />
+				<!-- <view class='display_flex_end'>
+            <text>环境：</text>
+            <text>{{environmentalScience}}</text>
+            <text class='storeServerHint'>服务：</text>
+            <text>{{service}}</text>
+          </view> -->
+			</view>
+			<view class='display_flex space_between align_center border-botom-gray' style="height:55px;margin-left:15px">
+				<view class='inline-center'>
+					<image class='store-icon' src='/images/location_new.png' mode='widthFix'></image>
+					<text class='store-address store-text-36 overflow_hide max_line_2'>{{storeAddress}}
+					</text>
+				</view>
+				<!-- <text class='store-briefIntroduction'>{{recommendedRoute}}</text> -->
+				<!-- <text class='store-briefIntroduction'>{{briefIntroduction}}</text> -->
+				<view class='top_right-arrow' />
+			</view>
+		</view>
+		<view class='border-botom-gray margin-top-10' bindtap='navigateToStoreMap'>
+			<view class='store-wxparse' style="margin-bottom:{{isIphoneX ? '207rpx' :'140rpx'}};">
+				<rich-text class='store-rich-text' nodes="{{storeDetailsNodes}}"></rich-text>
+			</view>
+		</view>
+		<view class='bottom-view' bindtap='makeAnOppointmentDoctor' style="padding-bottom:{{isIphoneX ? '67rpx':'0rpx'}};">
+			<image class='store-icon ' src='/images/ic_doctor.png' mode='widthFix'></image>
+			<text class='store-text-40'>医生预约 </text>
+			<!-- <button class='addAppointmentBtn'>医生预约</button> -->
+		</view>
+	</view>
+</view>

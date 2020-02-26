@@ -1,0 +1,171 @@
+/* pages/myDoctor/myDoctor.wxss */
+/* pages/oppointmentDoctor/oppointmentDoctor.wxss */
+.staffInfoPage {
+  background-color: #F6F7F8;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+}
+.staffInfoItem {
+  background-color: white;
+  padding: 32rpx;
+  display: flex;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.imgView {
+  width: 30%;
+  padding-top: 40%;
+  background-color: #A8A9AA;
+  position: relative;
+  box-shadow: 4px 4px 8px rgb(228, 225, 222);
+  border-radius: 16rpx;
+}
+.infoView {
+  width: 70%;
+  padding-left: 24rpx;
+}
+.staffInfoImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  border-radius: 16rpx;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.inline-flex {
+  display: inline-flex;
+}
+.display-block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.docotorName {
+  color: black;
+  line-height: 40rpx;
+  top: 0;
+  left: 0;
+}
+.display-flex-1-padd-10 {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding: 10rpx 0;
+}
+.text-36 {
+  font-size: 36rpx;
+}
+.display-flex {
+  display: flex;
+}
+.flex-direction-column {
+  flex-direction: column
+}
+.flex-1 {
+ flex: 1;
+}
+.inline-block {
+  height: 30rpx;
+}
+.title {
+  margin-left: 0rpx;
+}
+.jonTitle {
+  margin-left: 16rpx;
+  overflow: hidden;
+}
+.title text {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #9e9e9e;
+  padding-left: 16rpx;
+  padding-right: 16rpx;
+  border: 1px solid #9e9e9e;
+  text-align: center;
+  max-lines: 1;
+}
+.doctorInfoText {
+  display: block;
+  width: calc(60vw);
+  height: 64rpx;
+  font-size: 30rpx;
+  color: #555657;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp:2;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  line-height: 36rpx;
+  padding: 10rpx 0;
+}
+.btnsView {
+  width: 100%;
+  height: 50rpx;
+  position: relative;
+  color: white;
+  display: flex;
+}
+.btnsView view {
+  height: 100%;
+  display: flex;
+}
+.width-50 {
+  width: 36%;
+}
+.btnsView button {
+  height: 100%;
+  width: 36%;
+  color: white;
+}
+.font-size-20 {
+  text-align: center;
+  line-height: 56rpx;
+  font-size: 40rpx;
+}
+.font-size-18 {
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 36rpx;
+}
+.consultBtn {
+  /* background-color: #124395; */
+  text-align: center;
+}
+.oppointmentBtn {
+  /* background-color: #EE501A; */
+  /* margin-left: 22rpx; */
+  margin-right: 0;
+}
+.dataAllLoaded {
+  font-size: 30rpx;
+  width: 100%;
+  color: #9e9e9e;
+  text-align: center;
+  padding: 0rpx 0 20rpx 0;
+}
+.noDataView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 9%;
+
+}
+.noDataImg {
+  width: 450rpx;
+  height: 270rpx;
+}
+.text-size-36 {
+  font-size: 36rpx;
+  display: flex;
+}
+.margin-top-4 {
+  margin-top: 4%;
+}
+

@@ -1,0 +1,119 @@
+/* component/imgInfo/imgInfo.wxss */
+.imgInfoPage {
+  background-color: #F6F7F8;
+}
+.infoItem {
+  background-color: white;
+  padding: 32rpx;
+  display: flex;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.imgView {
+  width: 30%;
+  padding-top: 34%;
+  background-color: #A8A9AA;
+  position: relative;
+}
+.infoImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.infoView {
+  width: 70%;
+  padding-left: 24rpx;
+}
+.inline-flex {
+  display: inline-flex;
+}
+.display-block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.width-72 {
+  width: 72%;
+  padding-top: 36%;
+  background-color: green;
+}
+.docotorName {
+  color: black;
+  line-height: 40rpx;
+  top: 0;
+  left: 0;
+}
+
+.display-flex {
+  display: flex;
+}
+.flex-direction-column {
+  flex-direction: column
+}
+.flex-1 {
+ flex: 1;
+}
+.inline-block {
+  display: inline-block;
+}
+.title text {
+  font-size: 24rpx;
+  color: #9e9e9e;
+  width: 72rpx;
+  margin-right: 16rpx;
+  padding-left: 16rpx;
+  padding-right: 16rpx;
+  border: 1px solid #9e9e9e;
+  text-align: center
+}
+.doctorInfoText {
+  display: block;
+  font-size: 30rpx;
+  color: #555657;
+  max-lines: 2;
+  overflow: hidden;
+  white-space: normal;
+  line-height: 36rpx;
+  padding: 10rpx 0;
+}
+.btnsView {
+  width: 100%;
+  height: 50rpx;
+  position: relative;
+  color: white;
+  display: flex;
+}
+.btnsView view {
+  height: 100%;
+  display: flex;
+}
+.width-50 {
+  width: 36%;
+}
+.btnsView button {
+  height: 100%;
+  width: 36%;
+  color: white;
+}
+.font-size-20 {
+  text-align: center;
+  line-height: 56rpx;
+  font-size: 40rpx;
+}
+.font-size-18 {
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 36rpx;
+}
+.consultBtn {
+  text-align: center;
+}
+.oppointmentBtn {
+  margin-left: 22rpx;
+}

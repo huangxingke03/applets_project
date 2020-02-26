@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "zan-account": "plugin://yzTradePlugin/zan-account"
+  }
+}

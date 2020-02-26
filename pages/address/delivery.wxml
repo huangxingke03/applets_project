@@ -1,0 +1,81 @@
+<!--pages/address/delivery.wxml-->
+<van-cell title="选择配送方式" is-link url="/pages/address/addressList">
+	<view slot="icon" class="van-cell__left-icon-wrap">
+		<view class="devicon-icon van-icon van-icon--image van-icon--image">
+			<image src="/images/devicon.png" />
+		</view>
+	</view>
+</van-cell>
+<view wx:if="{{dataArray.length==0}}" class='noDataView'>
+	<image class='noDataImg' src='../../images/prompt_back.png'></image>
+	<text class='text-size-36 margin-top-4'>暂无数据</text>
+</view>
+<view wx:else>
+	<scroll-view scroll-y="{{verticalSlidingTag}}" style="height: {{winHeight?winHeight+'px':'auto'}}" bindscrolltolower="searchScrollLower">
+		<view class='scrollView'>
+			<block wx:for="{{dataArray}}" wx:key="{{i}}">
+				<navigator url='deliveryInfo?id={{item.id}}'>
+					<van-panel custom-class="panel">
+						<view class="flex">
+							<view class="halfbg" wx:if="{{item.deliveryGoodsType==2}}" style='background: linear-gradient(to right, #f8a674 50%, #ffffff 50%);'>
+								<image src="{{'../../images/deliveryGoodsType/'+item.deliveryGoodsType+'.png'}}" style='width:70rpx' mode="widthFix"></image>
+							</view>
+							<view class="halfbg" wx:elif="{{item.deliveryGoodsType>5}}" style="  background: linear-gradient(to right, #f3c029 50%, #ffffff 50%);">
+								<image src="{{'../../images/deliveryGoodsType/'+item.deliveryGoodsType+'.png'}}" style='width:70rpx' mode="widthFix"></image>
+							</view>
+							<view class="halfbg" wx:elif="{{item.deliveryGoodsType>0}}" style='background: linear-gradient(to right, #f7c674 50%, #ffffff 50%);'>
+								<image src="{{'../../images/deliveryGoodsType/'+item.deliveryGoodsType+'.png'}}" style='width:70rpx' mode="widthFix"></image>
+							</view>
+							<view class="halfbg" wx:else style="  background: linear-gradient(to right, #f3c029 50%, #ffffff 50%);">
+								<image src="{{'../../images/deliveryGoodsType/7.png'}}" style='width:70rpx' mode="widthFix"></image>
+							</view>
+							<view class="rightview">
+								<view>
+									<view style='display:inline-block; padding:22rpx 0'>
+										{{item.addresseeName||""}}
+									</view>
+									<view class="flex-bet" style='padding-bottom:28rpx'>
+										<view style=' display: flex; align-items:center'>
+											<text>{{getDeliGoodTypeObj[item.deliveryGoodsType]}}</text>
+											<text class="title_prefix" style='margin-left:0.5em'>  </text>
+											<text class="gray-50 ">{{getLogisticsStatus[item.logisticsStatus]}}</text>
+										</view>
+										<view wx:if="{{item.logisticsCategory==1||item.logisticsCategory==2}}">
+											<text class="gray-50 smallFont"> {{getAllDelivery[item.logisticsCompanyNumber]||"未知"}}：{{getDeliveryStatus[item.logisticsHistory]||"未获取"}}</text>
+										</view>
+										<view wx:if="{{item.logisticsCategory==3||item.logisticsCategory==4}}">
+											<view class="gray-50 smallFont">自提状态:
+												<text class="gray-50 smallFont" wx:if="{{item.state==1}}">{{"待自提"}}</text>
+												<text class="gray-50 smallFont" wx:elif="{{item.state==2}}"> {{"已完成"}}</text>
+												<text class="gray-50 smallFont" wx:elif="{{item.state==3}}"> {{"已取消"}}</text>
+											</view>
+										</view>
+									</view>
+									<view wx:if="{{item.logisticsCategory==1||item.logisticsCategory==2}}">
+										<view class='gray-80 smallFont van-hairline--bottom'>
+											运单编号：{{item.orderNumber||"未能获取"}}
+										</view>
+										<view class="gray-50 smallFont" style='padding-top:14rpx'>
+											小贴士：{{item.itemRemarks||""}}
+										</view>
+									</view>
+									<view class="gray-50 smallFont van-hairline--top" style='padding-top:14rpx' wx:if="{{item.logisticsCategory==3||item.logisticsCategory==4}}">
+										小贴士：{{item.itemRemarks||""}}
+									</view>
+								</view>
+							</view>
+						</view>
+					</van-panel>
+				</navigator>
+			</block>
+			<view wx:if="{{moreLoad}}" class="loadingView" hidden="{{!searchLoading}}">
+				<view class='loadingIconView'>
+					<image src='../../images/loading_icon.png' class='loadingIcon' />
+				</view>
+				<view class='loadingTitle'>正在加载更多</view>
+			</view>
+			<view class="loadingComplete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+		</view>
+	</scroll-view>
+</view>
+<view wx:if="{{isIphoneX}}" style="padding-bottom:36px"></view>

@@ -1,0 +1,124 @@
+/* pages/address/addressList.wxss */
+@import "/component/demo-block/index.wxss";
+@import "/miniprogram_npm/vant-weapp/tag/index.wxss";
+@import "/miniprogram_npm/vant-weapp/cell/index.wxss";
+
+.ziti {
+  width: calc((100vw - 100px));
+}
+
+.van-cell__label {
+  /* color: #969799; */
+  font-size: 24rpx;
+  margin-top: 3px;
+  line-height: 18px;
+}
+
+.van-cell__title {
+  flex: 10 !important;
+}
+.van-cell__value {
+  flex: 3 !important;
+  background: transparent;
+  font-size: 15px;
+}
+
+.noDataView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 9%;
+}
+
+.text-size-36 {
+  font-size: 36rpx;
+  display: flex;
+}
+
+.margin-top-4 {
+  margin-top: 4%;
+}
+
+.van-swipe-cell__left, .van-swipe-cell__right {
+  display: inline-block;
+  width: 65px;
+  height: 62px;
+  font-size: 15px;
+  line-height: 62px;
+  color: #fff;
+  text-align: center;
+  background-color: #ff976a;
+}
+
+.van-swipe-cell__right {
+  display: inline-block;
+  width: 65px;
+  height: 62px;
+  font-size: 15px;
+  line-height: 62px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+}
+
+.van-radio__input {
+  font-size: 14px !important;
+}
+
+.van-radio__label {
+  width: calc(100% - 24px);
+}
+
+.demo-block__title {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  color: black;
+  padding: 10px 15px;
+}
+
+.title-prefix {
+  display: block;
+  font-size: 1em;
+  background-color: #f8c574;
+  height: 1.8em;
+  border-radius: 4px;
+  margin-right: 0.5em;
+  width: 9rpx;
+}
+
+.smallFont {
+  font-size: 24rpx;
+}
+
+.gray-50 {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.gray-80 {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.right-area {
+  width: 130px;
+  position: relative;
+  /* font-weight: bold */
+}
+
+.edit {
+  display: inline-block;
+  height: 63px;
+  background-color: #f8c574;
+  width: 65px;
+  position: absolute;
+  left: 0px;
+}
+
+.delete {
+  display: inline-block;
+  height: 63px;
+  background-color: red;
+  width: 65px;
+  position: absolute;
+  left: 65px;
+}

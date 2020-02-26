@@ -1,0 +1,19 @@
+<!--component/chose-item/chose-item.wxml-->
+<view class='main-item' wx:if="{{resourceArray.length>0}}">
+  <text class='item-title'>{{itemTitle}}</text>
+  <view class='item-main-info' wx:if="{{departmentTag}}">
+    <view class='item-second-info' wx:for="{{resourceArray}}" wx:key="{{i}}" bindtap='choseDepartment' data-name="{{item.name}}" data-id="{{item.id}}">
+      <view class="{{selectDepartmentId==item.id? 'item-back-select' :'item-back-normal'}}">
+        <text class="{{selectDepartmentId==item.id?'item-text-select':'item-text-normal'}}">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='item-main-info' wx:if="{{categoryTag}}">
+    <view class='item-category-info' wx:for="{{resourceArray}}" wx:key="{{i}}" bindtap='choseCategory' data-name="{{item.name}}" data-id="{{item.id}}">
+      <view class="{{selectCategoryId==item.id? 'category-select' :'category-normal'}}">
+        <text class="{{selectCategoryId==item.id?'item-text-select':'item-text-normal'}}">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='bottom-line' />
+</view>

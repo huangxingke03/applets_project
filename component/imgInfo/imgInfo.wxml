@@ -1,0 +1,31 @@
+<!--component/imgInfo/imgInfo.wxml-->
+<!-- <text>component/img-info-item/img-info-item.wxml</text> -->
+
+<view class='imgInfoPage'>
+    <block wx:for="{{infosData}}" wx:key="{{i}}">
+    <view class='infoItem'>
+      <view class='imgView'>
+        <image class='infoImg' mode='scaleToFill'></image>
+      </view>
+      <view class='infoView display-flex flex-direction-column'>
+        <view class='flex-1'>
+          <view>
+            <text class='docotorName font-size-20 inline-block'>{{item[titleKey]}}</text>
+          </view>
+          <view class='display-flex title'>
+            <text>{{item[tag1] || tag1Def}}</text>
+            <text>{{item[tag2] || tag2Def}}</text>
+          </view>
+          <view>
+            <text class='doctorInfoText'>{{item[infoTextKey] || infoTextDef}}</text>
+          </view>
+        </view>
+        <view class='btnsView'>
+          <view class='width-50'></view>
+          <button class='consultBtn inline-block font-size-18' style='background-color: {{neutralBtncolor}}' bindtap='_neutral'>{{neutralBtnText}}</button>
+          <button class='oppointmentBtn inline-block font-size-18' style='background-color: {{positiveBtnColor}}' bindtap='_positive'>{{positiveBtnText}}</button>
+        </view>
+      </view>
+    </view>
+    </block>
+  </view>

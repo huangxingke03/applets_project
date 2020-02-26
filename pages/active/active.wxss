@@ -1,0 +1,68 @@
+/* pages/active/active.wxss */
+/* card start */
+page{
+  max-width: 100vh;
+  overflow-x: hidden;
+}
+.card-container{
+  /* background-color:orange;  */
+    width:calc(100vw - 25px);
+  margin:16.6666px auto;
+  border-radius:15px;
+  color:#fff;
+   font-size:14px;
+   height:calc(( 100vw - 25px ) / 7 * 3 );
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   box-shadow: 6px 6px 14px rgba(195, 190, 186, 1.000);
+
+
+}
+.userinfo{
+  background-color: rgba(0,0,0,0.5);
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  height:31.33px;
+  align-items: center;
+  font-size:13.33px;
+  padding:0 1em;
+  border-radius:0 0 15px 15px ;
+
+
+  
+}
+.date{
+ font-size: 12px;
+}
+
+
+
+
+
+
+
+/* card end */
+.van-tabs__line {
+  background-color: #F8C574 !important;
+}
+/* no data */
+.noDataView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 9%;
+
+}
+.noDataImg {
+  width: 450rpx;
+  height: 270rpx;
+}
+.text-size-36 {
+  font-size: 36rpx;
+  display: flex;
+}
+.margin-top-4 {
+  margin-top: 4%;
+}

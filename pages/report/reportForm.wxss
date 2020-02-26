@@ -1,0 +1,10 @@
+/* pages/report/reportForm.wxss */
+.van-cell {
+padding:20px 15px !important
+}
+.textarea{
+  min-height: 280rpx!important;
+  margin-top:-10rpx !important;
+    margin-left:-4rpx !important;
+
+}
